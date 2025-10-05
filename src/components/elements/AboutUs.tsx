@@ -17,7 +17,7 @@ const AboutUs = () => {
                 <div className="working-hours-box">
                   <div className="working-hours-body">
                     <ul>
-                      <li>Parce qu’avoir la santé, c’est déjà un pas vers le bonheur.</li>
+                      <li>Parce qu’avoir la santé, c’est déjà un pas vers le bonheur.</li>
                     </ul>
                   </div>
                 </div>

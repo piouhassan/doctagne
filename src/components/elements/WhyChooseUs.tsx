@@ -4,26 +4,26 @@ const WhyChooseUs = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
-            <div className="why-choose-us-content">
+            <div className="why-choose-us-content text-black">
               <div className="section-title">
-                <h3 className="wow fadeInUp">why choose us</h3>
-                <h2 className="text-anime-style-3" data-cursor="-opaque">Why our rehab clinic make a difference</h2>
-                <p className="wow fadeInUp" data-wow-delay="0.2s">At our rehab clinic, we combine medical expertise, compassionate care, and personalized treatment plans to help each individual heal holistically.</p>
+                <h3 className="wow fadeInUp">Pourquoi nous choisir</h3>
+                <h2 className="text-anime-style-3" data-cursor="-opaque">Pourquoi Doctagné fait la différence</h2>
+                <p className="wow fadeInUp" data-wow-delay="0.2s">Chez Doctagné, nous combinons expertise technologique, accompagnement personnalisé et réseau de professionnels qualifiés pour faciliter votre parcours de santé.</p>
               </div>
               <div className="why-choose-btn wow fadeInUp" data-wow-delay="0.4s">
-                <a href="/about.html" className="btn-default">Learn More</a>
+                <a href="/about" className="btn-default">En savoir plus</a>
               </div>
               <div className="why-choose-item-box">
                 <div className="why-choose-item wow fadeInUp" data-wow-delay="0.6s">
                   <div className="why-choose-item-content">
-                    <h3>Healing Environment</h3>
-                    <p>A safe, supportive, and judgment-free space designed to help you.</p>
+                    <h3>Plateforme Sécurisée</h3>
+                    <p>Un environnement numérique sûr et confidentiel pour gérer vos rendez-vous médicaux en toute sérénité.</p>
                   </div>
                 </div>
                 <div className="why-choose-item wow fadeInUp" data-wow-delay="0.8s">
                   <div className="why-choose-item-content">
-                    <h3>Comprehensive Aftercare</h3>
-                    <p>A safe, supportive, and judgment-free space designed to help you.</p>
+                    <h3>Suivi Continu</h3>
+                    <p>Un accompagnement complet de la prise de rendez-vous jusqu'au suivi de vos résultats d'analyses.</p>
                   </div>
                 </div>
               </div>
@@ -63,7 +63,7 @@ const WhyChooseUs = () => {
                   </div>
                 </div>
                 <div className="satisfy-client-content">
-                  <p>Helped <span className="counter">12</span>K+ Happy Smiles</p>
+                  <p>Plus de <span className="counter">12</span>K patients satisfaits</p>
                 </div>
               </div>
             </div>

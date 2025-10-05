@@ -1,12 +1,12 @@
 const WhatWeDo = () => {
   return (
-    <div className="what-we-do">
+    <div className="what-we-do text-black">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-6">
             <div className="what-we-image-box">
               <div className="what-we-image">
-                <figure className="image-anime reveal">
+                <figure className="">
                   <img src="/images/what-we-image.jpg" alt="" />
                 </figure>
               </div>
@@ -16,12 +16,12 @@ const WhatWeDo = () => {
                     <img src="/images/icon-mail.svg" alt="" />
                   </div>
                   <div className="what-we-contact-item-content">
-                    <p>Email Address</p>
-                    <h3><a href="mailto:info@domainname.com">info@domainname.com</a></h3>
+                    <p>Adresse Email</p>
+                    <h3><a href="mailto:contact@doctagne.com">contact@doctagne.com</a></h3>
                   </div>
                 </div>
                 <div className="what-we-contact-btn">
-                  <a href="/contact.html" className="btn-default">contact us</a>
+                  <a href="/contact" className="btn-default">Contactez-nous</a>
                 </div>
               </div>
             </div>
@@ -29,9 +29,9 @@ const WhatWeDo = () => {
           <div className="col-lg-6">
             <div className="what-we-content">
               <div className="section-title">
-                <h3 className="wow fadeInUp">what we do</h3>
-                <h2 className="text-anime-style-3" data-cursor="-opaque">What we do to support your recovery</h2>
-                <p className="wow fadeInUp" data-wow-delay="0.2s">We offer personalized treatment plans, expert medical care, and emotional support to guide you through every stage of recovery</p>
+                <h3 className="wow fadeInUp">Ce que nous faisons</h3>
+                <h2 className="text-anime-style-3" data-cursor="-opaque">Comment nous facilitons votre accès aux soins</h2>
+                <p className="wow fadeInUp" data-wow-delay="0.2s">Nous offrons une plateforme complète, un réseau de professionnels qualifiés et un accompagnement personnalisé pour chaque étape de votre parcours de santé</p>
               </div>
               <div className="what-we-item-box">
                 <div className="what-we-item wow fadeInUp" data-wow-delay="0.4s">
@@ -39,8 +39,8 @@ const WhatWeDo = () => {
                     <img src="/images/icon-what-we-item-1.svg" alt="" />
                   </div>
                   <div className="what-we-item-content">
-                    <h3>Full Continuum of Care</h3>
-                    <p>From medically supervised detox to aftercare and relapse prevention, we provide end-to-end support.</p>
+                    <h3>Parcours de Soins Complet</h3>
+                    <p>De la consultation médicale à la pharmacie et au laboratoire, nous assurons un suivi de bout en bout.</p>
                   </div>
                 </div>
                 <div className="what-we-item wow fadeInUp" data-wow-delay="0.6s">
@@ -48,8 +48,8 @@ const WhatWeDo = () => {
                     <img src="/images/icon-what-we-item-2.svg" alt="" />
                   </div>
                   <div className="what-we-item-content">
-                    <h3>Dual Diagnosis Treatment</h3>
-                    <p>We treat both addiction & co-occurring mental health conditions such as anxiety, depression, or PTSD, ensuring a more complete.</p>
+                    <h3>Gestion Intelligente</h3>
+                    <p>Nous centralisons vos rendez-vous médicaux, résultats d'analyses et ordonnances pour un suivi optimal de votre santé.</p>
                   </div>
                 </div>
                 <div className="what-we-item wow fadeInUp" data-wow-delay="0.8s">
@@ -57,8 +57,8 @@ const WhatWeDo = () => {
                     <img src="/images/icon-what-we-item-3.svg" alt="" />
                   </div>
                   <div className="what-we-item-content">
-                    <h3>Family Support & Involvement</h3>
-                    <p>Recovery is stronger with support. We offer family counseling, education, and involvement to rebuild trust.</p>
+                    <h3>Accompagnement Familial</h3>
+                    <p>La santé est une affaire de famille. Nous facilitons le partage sécurisé d'informations avec vos proches.</p>
                   </div>
                 </div>
               </div>

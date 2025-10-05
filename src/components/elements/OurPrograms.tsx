@@ -2,43 +2,43 @@
 const OurPrograms = () => {
   const programs = [
     {
-      title: "Holistic Therapy",
-      description: "Holistic Therapy focuse on healing of mind body spirit through practices.",
+      title: "Médecins Généralistes",
+      description: "Consultez des médecins généralistes qualifiés pour vos soins de santé primaires et préventifs.",
       delay: "0s"
     },
     {
-      title: "Pure Balance",
-      description: "Pure Balance focuses on healing the mind, body, spirit through practices.",
+      title: "Spécialistes",
+      description: "Accédez à un réseau de spécialistes dans tous les domaines médicaux pour des soins experts.",
       delay: "0.2s"
     },
     {
-      title: "Natural Path",
-      description: "Natural Path focuses on healing the mind, body, spirit through practices.",
+      title: "Pharmacies Partenaires",
+      description: "Trouvez facilement les pharmacies les plus proches et gérez vos ordonnances en ligne.",
       delay: "0.4s"
     },
     {
-      title: "Health Horizon",
-      description: "Health Horizon focuses on healing the mind, body, spirit through practices.",
+      title: "Laboratoires d'Analyses",
+      description: "Réservez vos analyses et recevez vos résultats directement sur la plateforme de manière sécurisée.",
       delay: "0.6s"
     }
   ];
 
   return (
-    <div className="our-programs">
+    <div className="our-programs text-black">
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
             <div className="programs-image-box">
               <div className="section-title">
-                <h2 className="text-anime-style-3" data-cursor="-opaque">Our most trusted treatment programs</h2>
+                <h2 className="text-anime-style-3" data-cursor="-opaque">Notre réseau de professionnels de santé</h2>
               </div>
               <div className="programs-item-body">
                 <div className="programs-body-content wow fadeInUp" data-wow-delay="0.2s">
-                  <p>We offer evidence-base client-centered treatment programs that have helped countless individuals.</p>
+                  <p>Nous collaborons avec un vaste réseau de professionnels de santé qualifiés pour vous offrir des soins accessibles et de qualité.</p>
                 </div>
                 <div className="programs-body-image">
                   <figure>
-                    <img src="/images/programs-body-image.png" alt="Programs" />
+                    <img src="/images/programs-body-image.png" alt="Programmes" />
                   </figure>
                 </div>
               </div>
@@ -53,7 +53,7 @@ const OurPrograms = () => {
                       <h3>{program.title}</h3>
                     </div>
                     <div className="program-btn">
-                      <a href="/contact.html">
+                      <a href="/contact">
                         <img src="/images/arrow-white.svg" alt="Contact" />
                       </a>
                     </div>

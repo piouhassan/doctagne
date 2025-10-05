@@ -12,33 +12,31 @@ const MainFooter = () => {
               <div className="about-footer-content">
                 <p>Trouvez un professionnel de santé en quelques clics, proche de chez vous, au cabinet en ligne ou à domicile. Se soigner n'a jamais été aussi facile.</p>
               </div>
-              <div className="footer-contact-details">
-                <div className="footer-contact-item">
-                  <div className="icon-box">
-                    <img src="/images/icon-mail.svg" alt="Mail" />
-                  </div>
-                  <div className="footer-contact-item-content">
-                    <h3>Addresse Email</h3>
-                    <p><a href="mailto:contact@doctagne.com">contact@doctagne.com</a></p>
-                    <p><a href="mailto:support@doctagne.com">support@doctagne.com</a></p>
-                  </div>
+
+                <div className="footer-contact-details mt-5">
+                    <div className="footer-contact-item">
+                        <div className="icon-box">
+                            <img src="/images/icon-mail.svg" alt="Mail" />
+                        </div>
+                        <div className="footer-contact-item-content">
+                            <p className='pt-2'><a href="mailto:contact@doctagne.com">contact@doctagne.com</a></p>
+                        </div>
+                    </div>
+                    <div className="footer-contact-item">
+                        <div className="icon-box">
+                            <img src="/images/icon-phone.svg" alt="Phone" />
+                        </div>
+                        <div className="footer-contact-item-content">
+                            <p className="pt-2"><a href="tel:+123456789">+(228) 90 01 50 29</a></p>
+                        </div>
+                    </div>
                 </div>
-                <div className="footer-contact-item">
-                  <div className="icon-box">
-                    <img src="/images/icon-phone.svg" alt="Phone" />
-                  </div>
-                  <div className="footer-contact-item-content">
-                    <h3>Numéro Téléphone</h3>
-                    <p><a href="tel:+123456789">+(228) 90 01 50 29</a></p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
           <div className="col-lg-6">
             <div className="footer-newsletter-box">
               <div className="section-title">
-                <h2 className="text-anime-style-3" data-cursor="-opaque">Accédez rapidement à un professionnel de santé</h2>
+                <h4 className="text-white" data-cursor="-opaque">Accédez rapidement à un professionnel de santé</h4>
               </div>
               <div className="footer-newsletter-form">
                 <form id="newslettersForm" action="#" method="POST">
@@ -48,6 +46,7 @@ const MainFooter = () => {
                   </div>
                 </form>
               </div>
+
             </div>
           </div>
           <div className="col-lg-12">

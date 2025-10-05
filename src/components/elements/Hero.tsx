@@ -7,12 +7,12 @@ const Hero = () => {
             <div className="col-lg-9">
               <div className="hero-content">
                 <div className="section-title">
-                  <h1 className="text-anime-style-3" data-cursor="-opaque">Obtenez de meilleurs soins pour votre santé</h1>
-                  <p className="wow fadeInUp">Gérez votre santé et celle de vos proches de façon sécurisée, et prévenez l’apparition de maladies grâce à des messages de sensibilisation.</p>
+                  <h1 className="text-anime-style-3" data-cursor="-opaque">Votre santé à portée de main, où que vous soyez</h1>
+                  <p className="wow fadeInUp">Gérez votre santé et celle de vos proches en toute sécurité. Prenez rendez-vous avec des médecins, pharmacies et laboratoires, consultez en ligne et suivez vos résultats médicaux sur une seule plateforme.</p>
                 </div>
                 <div className="hero-body">
                   <div className="hero-btn wow fadeInUp" data-wow-delay="0.2s">
-                    <a href="/book-appointment.html" className="btn-default btn-dark">S'inscrire gratuitement</a>
+                    <a href="/inscription" className="btn-default btn-dark">S'inscrire gratuitement</a>
                   </div>
                   <div className="satisfy-client-box wow fadeInUp" data-wow-delay="0.4s">
                     <div className="satisfy-client-images">
@@ -38,7 +38,7 @@ const Hero = () => {
                       </div>
                     </div>
                     <div className="satisfy-client-content">
-                      <p><span>5.5k+</span> Clients satisfaits</p>
+                      <p><span>5.5k+</span> Patients satisfaits</p>
                     </div>
                   </div>
                 </div>
@@ -46,7 +46,7 @@ const Hero = () => {
             </div>
             <div className="col-lg-3">
               {/* <div className="recovery-circle">
-                <a href="/contact.html"><img src="/images/recovery-circle.svg" alt="" /></a>
+                <a href="/contact"><img src="/images/recovery-circle.svg" alt="" /></a>
               </div> */}
             </div>
           </div>

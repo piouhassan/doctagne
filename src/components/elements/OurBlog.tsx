@@ -1,23 +1,23 @@
 const posts = [
   {
     image: "/images/post-1.jpg",
-    title: "What to Expect During Detox: A First-Timer's Guide",
-    link: "/blog-single.html",
-    description: "Learn about the different phases of recovery and what to expect during each step of your journey toward lasting sobriety.",
+    title: "Téléconsultation : Comment bien préparer votre rendez-vous en ligne",
+    link: "/actualites",
+    description: "Découvrez nos conseils pratiques pour profiter au mieux de vos consultations médicales à distance et optimiser votre suivi santé.",
     delay: "0s"
   },
   {
     image: "/images/post-2.jpg",
-    title: "Nutrition and Recovery: Healing from the Inside Out",
-    link: "/blog-single.html",
-    description: "Discover practical techniques to maintain mental health and build resilience in your everyday routine.",
+    title: "Pharmacies de garde : Comment les trouver rapidement ?",
+    link: "/actualites",
+    description: "Apprenez à localiser facilement les pharmacies de garde près de chez vous grâce à notre plateforme et nos outils de recherche.",
     delay: "0.2s"
   },
   {
     image: "/images/post-3.jpg",
-    title: "How Group Therapy Builds Connection and Accountability",
-    link: "/blog-single.html",
-    description: "A comprehensive guide for families navigating the challenges and rewards of supporting a loved one's recovery journey.",
+    title: "Résultats d'analyses : Comprendre vos examens médicaux",
+    link: "/actualites",
+    description: "Un guide complet pour vous aider à déchiffrer vos résultats de laboratoire et mieux communiquer avec votre médecin.",
     delay: "0.4s"
   }
 ];
@@ -29,8 +29,8 @@ const OurBlog = () => {
         <div className="row section-row">
           <div className="col-lg-12">
             <div className="section-title section-title-center">
-              <h3 className="wow fadeInUp">Latest blog</h3>
-              <h2 className="text-anime-style-3" data-cursor="-opaque">Explore our latest insights on addiction recovery</h2>
+              <h3 className="wow fadeInUp">Actualités</h3>
+              <h2 className="text-anime-style-3" data-cursor="-opaque">Nos derniers articles</h2>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@ const OurBlog = () => {
                     <h2><a href={post.link}>{post.title}</a></h2>
                   </div>
                   <div className="post-item-btn">
-                    <a href={post.link} className="readmore-btn">read more</a>
+                    <a href={post.link} className="readmore-btn">Lire plus</a>
                   </div>
                 </div>
               </div>

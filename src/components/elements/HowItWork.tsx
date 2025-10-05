@@ -10,38 +10,38 @@ const HowItWork = () => {
   const steps = [
     {
       image: "/images/work-image-1.jpg",
-      title: "Confidential Consultation",
-      description: "Our admissions team is available 24/7 to listen, answer your questions and guide you through.",
+      title: "Créez votre compte",
+      description: "Inscrivez-vous gratuitement en quelques clics et accédez à notre réseau de professionnels de santé.",
       delay: "0s"
     },
     {
       image: "/images/work-image-2.jpg",
-      title: "Personalized Assessment",
-      description: "We conduct a thorough evaluation of your needs, health, and goals to design a treatment plan",
+      title: "Prenez rendez-vous",
+      description: "Recherchez et réservez facilement un rendez-vous avec un médecin, une pharmacie ou un laboratoire.",
       delay: "0.2s"
     },
     {
       image: "/images/work-image-3.jpg",
-      title: "Begin Treatment",
-      description: "Start your path to healing with compassionate care, evidence based therapies.",
+      title: "En ligne ou en cabinet",
+      description: "Choisissez entre une téléconsultation ou un rendez-vous en cabinet selon votre convenance.",
       delay: "0.4s"
     },
     {
       image: "/images/work-image-4.jpg",
-      title: "Ongoing Support",
-      description: "We provide a customized aftercare plan along with relapse prevention tools and access",
+      title: "Suivi et résultats",
+      description: "Accédez à vos ordonnances, résultats d'analyses et historique médical depuis votre espace personnel.",
       delay: "0.6s"
     }
   ];
 
   return (
-    <div className="how-it-work bg-section">
+    <div className="how-it-work bg-section text-black">
       <div className="container">
         <div className="row section-row">
           <div className="col-lg-12">
             <div className="section-title section-title-center">
-              <h3 className="wow fadeInUp">How it work</h3>
-              <h2 className="text-anime-style-3" data-cursor="-opaque">Your recovery journey step by step guide</h2>
+              <h3 className="wow fadeInUp">Comment ça marche</h3>
+              <h2 className="text-anime-style-3" data-cursor="-opaque">Votre parcours de santé en 4 étapes simples</h2>
             </div>
           </div>
         </div>

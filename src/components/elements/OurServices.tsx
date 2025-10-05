@@ -1,5 +1,6 @@
 // Services.js
 import React from 'react';
+import Link from "next/link";
 
 const Services = () => {
   const services = [
@@ -7,25 +8,29 @@ const Services = () => {
       title: "Gestion Medicale",
       icon: "/images/icon-service-1.svg",
       description: "Simplifiez la gestion de vos rendez-vous en un seul endroit. Avec notre solution, le suivi médical devient fluide, rapide et sans paperasse inutile.",
-      delay: "0s"
+      delay: "0s",
+      slug: "gestion-medicale",
     },
     {
       title: "Télémédecine",
       icon: "/images/icon-service-2.svg",
       description: "Consultation à distance, en toute sécurité. La santé n’attend pas. \n Accompagnement médical, où que vous soyez, à tout moment.",
-      delay: "0.2s"
+      delay: "0.2s",
+      slug : "telemedecine"
     },
     {
       title: "Pharmacie",
       icon: "/images/icon-service-3.svg",
       description: "Retrouvez facilement les médicaments prescrits et connectez vos patients à leur pharmacie la plus proche. Une continuité de soins, du diagnostic à la délivrance.",
-      delay: "0.4s"
+      delay: "0.4s",
+     slug : "pharmacie"
     },
     {
       title: "Laboratoire",
       icon: "/images/icon-service-4.svg",
       description: "Recevez et partagez les résultats d’analyses en ligne, sans déplacement. Gagnez du temps, assurez un meilleur suivi, et facilitez la communication entre médecin et patient.",
-      delay: "0.6s"
+      delay: "0.6s",
+      slug : "laboratoire"
     }
   ];
 
@@ -50,7 +55,7 @@ const Services = () => {
         <div className="row service-list">
           {services.map((service, index) => (
             <div key={index} className="col-lg-3 col-md-6">
-              <div className={`service-item ${index === 0 ? 'active' : ''} wow fadeInUp`} data-wow-delay={service.delay}>
+              <div className={`service-item ${index === 0 ? 'active' : ''}`} data-wow-delay={service.delay}>
                 <div className="service-title">
                   <h3><a href="/service-single">{service.title}</a></h3>
                 </div>
@@ -58,17 +63,17 @@ const Services = () => {
                   <img src={service.icon} alt={service.title} />
                 </div>
                 <div className="service-content">
-                  <p>{service.description}</p>
+                  <p className={`${index !== 0 ? "text-black" : "active"}`}>{service.description}</p>
                 </div>
                 <div className="service-btn">
-                  <a href="/service-single" className="readmore-btn">En savoir plus</a>
+                  <Link href={`/services/${service.slug}`} className="readmore-btn">En savoir plus</Link>
                 </div>
               </div>
             </div>
           ))}
 
           <div className="col-lg-12">
-            <div className="section-footer-text wow fadeInUp" data-wow-delay="0.8s">
+            <div className="section-footer-text wow fadeInUp text-black" data-wow-delay="0.8s">
               <p><span>Gratuit</span>Faites le premier pas vers une meilleure santé – <a href="/book-appointment">planifiez dès aujourd’hui votre évaluation gratuite !</a></p>
             </div>
           </div>

@@ -8,8 +8,8 @@ const PageHeader = () => {
               <h1 className="text-anime-style-3" data-cursor="-opaque">Actualités</h1>
               <nav className="wow fadeInUp">
                 <ol className="breadcrumb">
-                  <li className="breadcrumb-item"><a href="/">Accueil</a></li>
-                  <li className="breadcrumb-item active" aria-current="page">Actualités</li>
+                  {/* <li className="breadcrumb-item"><a href="/">Accueil</a></li> */}
+                  <li className="breadcrumb-item active" aria-current="page">Doctagné / Actualités</li>
                 </ol>
               </nav>
             </div>

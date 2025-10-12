@@ -2,25 +2,25 @@ const ContactFormSection = () => {
   return (
     <div className="contact-us-form">
       <div className="section-title">
-        <h2 className="text-anime-style-3" data-cursor="-opaque">Get in touch with us</h2>
+        <h2 className="text-anime-style-3" data-cursor="-opaque">Contactez nous</h2>
       </div>
       <div className="contact-form">
         <form id="contactForm" action="#" method="POST" data-toggle="validator" className="wow fadeInUp" data-wow-delay="0.2s">
           <div className="row">
             <div className="form-group col-md-6 mb-4">
-              <input type="text" name="fname" className="form-control" id="fname" placeholder="First Name" required />
+              <input type="text" name="fname" className="form-control" id="fname" placeholder="Prénom" required />
               <div className="help-block with-errors"></div>
             </div>
             <div className="form-group col-md-6 mb-4">
-              <input type="text" name="lname" className="form-control" id="lname" placeholder="Last Name" required />
+              <input type="text" name="lname" className="form-control" id="lname" placeholder="Nom" required />
               <div className="help-block with-errors"></div>
             </div>
             <div className="form-group col-md-6 mb-4">
-              <input type="email" name="email" className="form-control" id="email" placeholder="Email" required />
+              <input type="email" name="email" className="form-control" id="email" placeholder="E-mail" required />
               <div className="help-block with-errors"></div>
             </div>
             <div className="form-group col-md-6 mb-4">
-              <input type="text" name="phone" className="form-control" id="phone" placeholder="Phone" required />
+              <input type="text" name="phone" className="form-control" id="phone" placeholder="Téléphone" required />
               <div className="help-block with-errors"></div>
             </div>
             <div className="form-group col-md-12 mb-5">
@@ -28,7 +28,7 @@ const ContactFormSection = () => {
               <div className="help-block with-errors"></div>
             </div>
             <div className="col-md-12">
-              <button type="submit" className="btn-default">Submit Message</button>
+              <button type="submit" className="btn-default">Envoyer</button>
               <div id="msgSubmit" className="h3 hidden"></div>
             </div>
           </div>

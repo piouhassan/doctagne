@@ -34,7 +34,7 @@ const testimonials = [
   {
     name: "Ibrahima Sow",
     role: "Retraité",
-    image: "/images/author-1.jpg",
+    image: "/images/author-5.jpg",
     rating: 5,
     text: "À mon âge, les déplacements fréquents à l'hôpital sont fatigants. La téléconsultation m'a permis de suivre mon traitement régulièrement sans me déplacer. Les médecins sont très professionnels et attentifs. Je recommande vivement !"
   }

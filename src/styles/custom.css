@@ -94,6 +94,7 @@ body{
 p{
 	line-height: 1.6em;
 	margin-bottom: 1.5em;
+	font-size: 16px;
 }
 
 h1,
@@ -319,9 +320,6 @@ body{
     position: absolute;
     top: 50%;
     right: 0;
-	background-image: url('/images/arrow-accent.svg');
-	background-repeat: no-repeat;
-	background-size: cover;
 	width: 20px;
 	height: 20px;
 	transform: translate(0, -50%);
@@ -437,6 +435,7 @@ body{
 
 .section-title-content p:last-child{
 	margin-bottom: 0;	
+	    color: black;
 }
 
 .section-title{
@@ -484,6 +483,7 @@ body{
 .section-title p{
 	margin-top: 20px;
 	margin-bottom: 0;
+	color: black;
 }
 
 .dark-section .section-title h3,
@@ -929,7 +929,7 @@ header.main-header .header-sticky.active{
 
 .satisfy-client-image img{
     width: 100%;
-	border-radius: 50%;
+	
 }
 
 .satisfy-client-image.add-more{
@@ -1236,6 +1236,10 @@ header.main-header .header-sticky.active{
 	margin-bottom: 30px;
 	padding: 40px 2.083vw;
 	overflow: hidden;
+
+}
+.service-item:hover{
+	color: white;
 }
 
 .service-item::before{
@@ -1314,8 +1318,12 @@ header.main-header .header-sticky.active{
 }
 
 .service-content p{
+	color:black;
 	margin-bottom: 0;
 	transition: all 0.4s ease-in-out;
+}
+.service-content p:hover{
+	color: white;
 }
 
 .service-item.active .service-title h3,
@@ -1858,7 +1866,9 @@ header.main-header .header-sticky.active{
 }
 
 .work-item-image figure img{
-	width: 100%;
+	width: fit-content;
+    height: 160px;
+    object-fit: cover;
 }
 
 .work-item-content h3{
@@ -2586,14 +2596,15 @@ header.main-header .header-sticky.active{
 /************************************/
 
 .page-header{
+	image-rendering: auto;
 	position: relative;
-	background: url('/images/page-header-bg.jpg') no-repeat;
-	background-position: center center;
+	background-position: center;
 	background-size: cover;
 	border-radius: 20px;
 	padding: 170px 0;
 	overflow: hidden;
 }
+
 
 .page-header::before{
     content: '';
@@ -2865,6 +2876,7 @@ header.main-header .header-sticky.active{
 }
 
 .care-counter-item-content p{
+	color: black;
     margin-bottom: 0;
 }
 
@@ -2951,6 +2963,7 @@ header.main-header .header-sticky.active{
 
 .result-item-content p{
 	margin-bottom: 0;
+	color: rgb(59, 59, 59);
 }
 
 .result-image-box{
@@ -3467,7 +3480,7 @@ header.main-header .header-sticky.active{
     margin: 0;
 }
 
-.page-pagination ul li a,
+.page-pagination ul li button,
 .page-pagination ul li span{
     display: flex;
     text-decoration: none;
@@ -3484,18 +3497,20 @@ header.main-header .header-sticky.active{
     transition: all 0.3s ease-in-out;
 }
 
-.page-pagination ul li.active a, 
-.page-pagination ul li a:hover{
+.page-pagination ul li.active button, 
+.page-pagination ul li button:hover{
     background: var(--accent-color);
     color: var(--white-color);
+	
 }
+
 
 /************************************/
 /*** 	 21. Blog Single css	  ***/
 /************************************/
 
 .page-single-post{
-	padding: 100px 0;
+	padding: 30px 0 100px 0;
 }
 
 .post-single-meta{
@@ -3595,6 +3610,7 @@ header.main-header .header-sticky.active{
 
 .post-entry p{
 	margin-bottom: 20px;
+    color: black;
 }
 
 .post-entry p:last-child{
@@ -3623,7 +3639,7 @@ header.main-header .header-sticky.active{
 	font-size: 16px;
     font-weight: 500;
     line-height: 1.5em;
-    color: var(--text-color);
+    color: black;
     margin-bottom: 15px;
 }
 
@@ -6568,4 +6584,744 @@ header.main-header .header-sticky.active{
 	.appointment-image img{
         aspect-ratio: 1 / 1.012;
     }
+}
+
+/*----------------------------------------------------------------*/
+
+.testimonial-card{
+	background: var(--testimonial-card-bg);
+	border: 1px solid var(--testimonial-card-border);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.377);
+	padding: 30px;
+	border-radius: 10px;
+	transition: all 0.3s ease;
+	color: #fff;
+
+}
+
+.testimonial-author h3{
+	color: #fff;
+}
+
+.testimonials-rating i{
+	color: #ffda0a;
+}
+
+/************************************/
+/***  Blog Single Button Styles  ***/
+/************************************/
+
+/* Style cohérent pour le bouton Article suivant */
+.next-article-btn .btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1em;
+    text-transform: capitalize;
+    background: var(--accent-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 100px;
+    padding: 16px 55px 16px 20px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.next-article-btn .btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    background-image: url('/images/arrow-white.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px auto;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all 0.4s ease-in-out;
+}
+
+.next-article-btn .btn:hover::before {
+    background-color: var(--accent-color);
+}
+
+.next-article-btn .btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    background: var(--primary-color);
+    z-index: -1;
+    transition: all 0.4s ease-in-out;
+}
+
+.next-article-btn .btn:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
+}
+
+.next-article-btn .btn:hover {
+    color: var(--white-color);
+}
+
+/* Style cohérent pour le bouton Retour aux articles */
+.post-content .btn-light {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1em;
+    text-transform: capitalize;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border: 2px solid var(--divider-color);
+    border-radius: 100px;
+    padding: 16px 30px 16px 20px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.post-content .btn-light::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    background-image: url('/images/arrow-left.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+}
+
+.post-content .btn-light:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
+    border-color: var(--primary-color);
+}
+
+.post-content .btn-light:hover::before {
+    filter: brightness(0) invert(1);
+}
+
+/* Amélioration de l'espacement et de l'alignement */
+.next-article-btn {
+    margin-bottom: 30px;
+}
+
+.next-article-btn p {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.post-tag-links .row {
+    align-items: flex-end;
+}
+
+/* Responsive */
+@media only screen and (max-width: 991px) {
+    .next-article-btn .btn,
+    .post-content .btn-light {
+        padding: 14px 44px 14px 15px;
+        font-size: 14px;
+    }
+    
+    .next-article-btn .btn::before {
+        width: 30px;
+        height: 30px;
+        background-size: 16px auto;
+    }
+    
+    .post-content .btn-light::before {
+        width: 16px;
+        height: 16px;
+        left: 15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .post-tag-links .row > div {
+        margin-bottom: 20px;
+    }
+    
+    .post-social-sharing {
+        text-align: left;
+    }
+}
+
+
+/************************************/
+/***  Styles pour les filtres articles  ***/
+/************************************/
+
+/* Styles pour la barre de recherche */
+.search-bar .form-control {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--divider-color);
+    background: var(--white-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.search-bar .form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px var(--accent-secondary-color);
+    outline: none;
+}
+
+.search-bar .form-control::placeholder {
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+/* Styles pour le select des catégories */
+.form-control {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--divider-color);
+    background: var(--white-color);
+    color: var(--primary-color) !important;
+    transition: all 0.3s ease-in-out;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23212529' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+}
+
+/* Focus state */
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px var(--accent-secondary-color);
+    outline: none;
+}
+
+/* Hover state */
+.form-control:hover {
+    border-color: var(--accent-color);
+}
+
+/* Styles pour les options du select */
+.form-control option {
+    background: var(--white-color);
+    color: var(--primary-color);
+    padding: 12px;
+    font-size: 16px;
+}
+
+/* Style spécifique pour le select des catégories */
+select.form-control {
+    cursor: pointer;
+}
+
+/* Style pour le compteur de résultats */
+.results-count {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Styles pour la pagination (amélioration) */
+.page-pagination .pagination {
+    margin: 0;
+}
+
+.page-pagination .page-link {
+    background: var(--divider-color);
+    color: var(--accent-color);
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    font-weight: 600;
+    line-height: 1em;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-pagination .page-link:hover {
+    background: var(--accent-color);
+    color: var(--white-color);
+}
+
+.page-pagination .active .page-link {
+    background: var(--accent-color);
+    color: var(--white-color);
+}
+
+.page-pagination .page-link:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-pagination .page-link:disabled:hover {
+    background: var(--divider-color);
+    color: var(--accent-color);
+}
+
+/* Responsive */
+@media only screen and (max-width: 991px) {
+    .search-bar .form-control,
+    .form-control {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    .page-pagination .page-link {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .search-bar .form-control,
+    .form-control {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .form-control {
+        background-position: right 12px center;
+    }
+}
+
+/************************************/
+/***  Styles Pharmacie de Garde  ***/
+/************************************/
+
+/* Container principal */
+.pharmacy-search-box {
+    background: rgba(250, 230, 230, 0.589);
+    border-radius: 20px !important;
+    padding: 40px !important;
+    margin-bottom: 40px;
+    border: 1px solid var(--divider-color);
+}
+
+.pharmacy-search-box h3 {
+    font-size: 26px;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Barre de recherche */
+.pharmacy-search-box .input-group {
+    margin-bottom: 20px;
+}
+
+.pharmacy-search-box .input-group-text {
+    background: var(--white-color);
+    border: 1px solid var(--divider-color);
+    border-right: none;
+    border-radius: 100px 0 0 100px;
+    padding: 0 20px;
+    color: var(--accent-color);
+}
+
+.pharmacy-search-box .form-control {
+    border: 1px solid var(--divider-color);
+    border-left: none;
+    border-radius: 0 100px 100px 0;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: var(--primary-color);
+    background: var(--white-color);
+}
+
+.pharmacy-search-box .form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px var(--accent-secondary-color);
+    outline: none;
+}
+
+/* Filtres */
+.pharmacy-search-box .form-select {
+    border: 1px solid var(--divider-color);
+    border-radius: 100px;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: var(--primary-color);
+    background: var(--white-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23212529' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 16px;
+    appearance: none;
+}
+
+.pharmacy-search-box .form-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px var(--accent-secondary-color);
+    outline: none;
+}
+
+/* Boutons */
+.pharmacy-search-box .btn {
+    border-radius: 100px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.pharmacy-search-box .btn-primary {
+    background: var(--accent-color);
+    color: var(--white-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.pharmacy-search-box .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    background: var(--primary-color);
+    transition: all 0.4s ease-in-out;
+    z-index: -1;
+}
+
+.pharmacy-search-box .btn-primary:hover::before {
+    right: auto;
+    left: 0;
+    width: 100%;
+}
+
+.pharmacy-search-box .btn-secondary {
+    background: var(--primary-color);
+    color: var(--white-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.pharmacy-search-box .btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    background: var(--accent-color);
+    transition: all 0.4s ease-in-out;
+    z-index: -1;
+}
+
+.pharmacy-search-box .btn-secondary:hover::before {
+    right: auto;
+    left: 0;
+    width: 100%;
+}
+
+/* Résultats */
+.pharmacy-results-count {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+/* Cartes pharmacie */
+.case-study-item {
+    background: var(--white-color);
+    border: 1px solid var(--divider-color);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    height: 100%;
+}
+
+.case-study-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-color);
+}
+
+.case-study-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.case-study-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.4s ease-in-out;
+}
+
+.case-study-item:hover .case-study-image img {
+    transform: scale(1.1);
+}
+
+/* Badge type de garde */
+.pharmacy-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--accent-color);
+    color: var(--white-color);
+    padding: 8px 15px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Bouton voir détails */
+.case-study-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.case-study-item:hover .case-study-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.case-study-btn a {
+    background: var(--accent-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.case-study-btn a:hover {
+    background: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.case-study-btn img {
+    width: 20px;
+    height: 20px;
+    transform: rotate(-45deg);
+    transition: all 0.3s ease-in-out;
+}
+
+.case-study-btn a:hover img {
+    transform: rotate(0);
+}
+
+/* Contenu de la carte */
+.case-study-content {
+    padding: 25px;
+}
+
+.case-study-content h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.case-study-content h2 a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.case-study-content h2 a:hover {
+    color: var(--accent-color);
+}
+
+/* Informations pharmacie */
+.pharmacy-info {
+    margin-top: 15px;
+}
+
+.pharmacy-info p {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: black;
+	font-size: 17px;
+    line-height: 1.4;
+}
+
+.pharmacy-info i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.pharmacy-info a {
+    color: black;
+	font-size: 17px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.pharmacy-info a:hover {
+    color: var(--accent-color);
+}
+
+/* Distance */
+.pharmacy-distance {
+    color: var(--accent-color) !important;
+    font-weight: 600;
+    margin-bottom: 0 !important;
+}
+
+/* Bouton voir détails */
+.pharmacy-details-btn {
+    background: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 100px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.pharmacy-details-btn:hover {
+    background: var(--accent-color);
+    color: var(--white-color);
+    transform: translateY(-2px);
+}
+
+/* État vide */
+.pharmacy-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.pharmacy-empty-state i {
+    font-size: 48px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.pharmacy-empty-state p {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 0;
+}
+
+/* Loading */
+.pharmacy-loading {
+    text-align: center;
+    padding: 50px 0;
+}
+
+/* Responsive */
+@media only screen and (max-width: 991px) {
+    .pharmacy-search-box {
+        padding: 30px !important;
+    }
+    
+    .pharmacy-search-box h3 {
+        font-size: 22px;
+    }
+    
+    .pharmacy-search-box .form-control,
+    .pharmacy-search-box .form-select,
+    .pharmacy-search-box .btn {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    
+    .case-study-content {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .pharmacy-search-box {
+        padding: 20px !important;
+        margin-bottom: 30px;
+    }
+    
+    .pharmacy-search-box h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .pharmacy-search-box .form-control,
+    .pharmacy-search-box .form-select,
+    .pharmacy-search-box .btn {
+        padding: 10px 15px;
+    }
+    
+    .case-study-image img {
+        height: 200px;
+    }
+    
+    .pharmacy-badge {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+}
+
+
+
+
+
+
+.socialMediaContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.socialMediaList {
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }

@@ -2,20 +2,21 @@
 import Layout from '@/components/layout/layout';
 import ServicesPageHeader from '@/components/elements/ServicesPageHeader';
 import PageServices from '@/components/elements/PageServices';
-import CtaBox from '@/components/elements/CtaBox';
-import WhatWeDo from '@/components/elements/WhatWeDo';
-import OurTestimonials from '@/components/elements/OurTestimonials';
-import OurFaqs from '@/components/elements/OurFaqs';
+import OurApproach from '@/components/elements/OurApproach';
+import OurCare from '@/components/elements/OurCare';
+import OurFeature from '@/components/elements/OurFeature';
+import OurResults from '@/components/elements/OurResults';
+import SocialMedia from '@/components/elements/SocialMedia';
 
 export default function ServicesPage() {
 	return (
 		<Layout>
 			<ServicesPageHeader />
 			<PageServices />
-			<CtaBox />
-			<WhatWeDo />
-			<OurTestimonials />
-			<OurFaqs />
+			<OurApproach />
+      		<OurCare />
+      		<OurResults />
+			<SocialMedia />
 		</Layout>
 	);
 }

@@ -1,28 +1,48 @@
-const posts = [
-  {
-    image: "/images/post-1.jpg",
-    title: "Téléconsultation : Comment bien préparer votre rendez-vous en ligne",
-    link: "/actualites",
-    description: "Découvrez nos conseils pratiques pour profiter au mieux de vos consultations médicales à distance et optimiser votre suivi santé.",
-    delay: "0s"
-  },
-  {
-    image: "/images/post-2.jpg",
-    title: "Pharmacies de garde : Comment les trouver rapidement ?",
-    link: "/actualites",
-    description: "Apprenez à localiser facilement les pharmacies de garde près de chez vous grâce à notre plateforme et nos outils de recherche.",
-    delay: "0.2s"
-  },
-  {
-    image: "/images/post-3.jpg",
-    title: "Résultats d'analyses : Comprendre vos examens médicaux",
-    link: "/actualites",
-    description: "Un guide complet pour vous aider à déchiffrer vos résultats de laboratoire et mieux communiquer avec votre médecin.",
-    delay: "0.4s"
-  }
-];
+"use client";
+
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
+interface Article {
+  id: number;
+  title: string;
+  picture: string;
+  content: string;
+  slug: string;
+}
 
 const OurBlog = () => {
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get("https://api.doctagne.com/api/v1/public/articles")
+      .then((res) => {
+        console.log("Résultat API :", res.data);
+        const allArticles = res.data.articles || [];
+        const topThree = allArticles.slice(0, 3);
+        setArticles(topThree);
+      })
+      .catch((error) => {
+        console.error("Erreur lors du chargement des articles:", error);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  // Fonction pour construire l'URL de l'image
+  const getImageUrl = (picture: string) => {
+    if (!picture) return '';
+    
+    // Si l'image contient déjà le chemin complet
+    if (picture.startsWith('http')) {
+      return picture;
+    }
+    
+    // Sinon, construire l'URL avec le chemin de l'API
+    return `https://api.doctagne.com/uploads/articles/${picture}`;
+  };
+
   return (
     <div className="our-blog">
       <div className="container">
@@ -30,32 +50,58 @@ const OurBlog = () => {
           <div className="col-lg-12">
             <div className="section-title section-title-center">
               <h3 className="wow fadeInUp">Actualités</h3>
-              <h2 className="text-anime-style-3" data-cursor="-opaque">Nos derniers articles</h2>
+              <h2 className="text-anime-style-3" data-cursor="-opaque">
+                Nos derniers articles
+              </h2>
             </div>
           </div>
         </div>
+
         <div className="row">
-          {posts.map((post, idx) => (
-            <div key={idx} className="col-lg-4 col-md-6">
-              <div className={`post-item wow fadeInUp`} data-wow-delay={post.delay}>
-                <div className="post-featured-image">
-                  <a href={post.link} data-cursor-text="View">
-                    <figure className="image-anime">
-                      <img src={post.image} alt={post.title} />
-                    </figure>
-                  </a>
-                </div>
-                <div className="post-item-body">
-                  <div className="post-item-content">
-                    <h2><a href={post.link}>{post.title}</a></h2>
+          {loading ? (
+            <div className="col-12 text-center">
+              <p>Chargement des articles...</p>
+            </div>
+          ) : articles.length === 0 ? (
+            <div className="col-12 text-center">
+              <p>Aucun article disponible</p>
+            </div>
+          ) : (
+            articles.map((article, idx) => (
+              <div key={article.id} className="col-lg-4 col-md-6">
+                <div
+                  className="post-item wow fadeInUp"
+                  data-wow-delay={`${idx * 0.2}s`}
+                >
+                  <div className="post-featured-image">
+                    <a href={`/actualites/${article.slug}`} data-cursor-text="View">
+                      <figure className="image-anime">
+                        <img
+                          src={getImageUrl(article.picture)}
+                          alt={article.title}
+                        />
+                      </figure>
+                    </a>
                   </div>
-                  <div className="post-item-btn">
-                    <a href={post.link} className="readmore-btn">Lire plus</a>
+                  <div className="post-item-body">
+                    <div className="post-item-content">
+                      <h2>
+                        <a href={`/actualites/${article.slug}`}>{article.title}</a>
+                      </h2>
+                    </div>
+                    <div className="post-item-btn">
+                      <a
+                        href={`/actualites/${article.slug}`}
+                        className="readmore-btn"
+                      >
+                        Lire plus
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
     </div>

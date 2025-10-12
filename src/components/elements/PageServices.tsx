@@ -1,50 +1,50 @@
 const services = [
   {
-    title: "Addiction Recovery Programs",
+    title: "Prise de rendez-vous facile",
     icon: "/images/icon-service-1.svg",
-    description: "Caring professionals who treat you with respect and understanding.",
+    description: "Réservez rapidement un rendez-vous avec un médecin, un laboratoire ou une pharmacie partenaire, directement depuis votre smartphone ou PC.",
     delay: "0s"
   },
   {
-    title: "Medical & Clinical Services",
+    title: "Téléconsultation sécurisée",
     icon: "/images/icon-service-2.svg",
-    description: "We're here for the entire journey - from detox to residential treatment,",
+    description: "Consultez un professionnel de santé où que vous soyez, pour un suivi médical pratique et confidentiel.",
     delay: "0.2s"
   },
   {
-    title: "Holistic & Wellness Services",
+    title: "Suivi des résultats d’analyses",
     icon: "/images/icon-service-3.svg",
-    description: "Our medically supervised detox programs ensure a safe, comfortable.",
+    description: "Recevez et partagez vos résultats médicaux en ligne, pour un suivi rapide et précis de votre santé.",
     delay: "0.4s"
   },
   {
-    title: "Intensive Outpatient Program",
+    title: "Gestion de votre santé familiale",
     icon: "/images/icon-service-4.svg",
-    description: "Our team of experts works closely with you to understand your history.",
+    description: "Partagez de manière sécurisée les informations médicales avec vos proches et suivez la santé de votre famille facilement.",
     delay: "0.6s"
   },
   {
-    title: "Menstral Heallthic Counselfinity",
+    title: "Conseils et prévention",
     icon: "/images/icon-service-5.svg",
-    description: "Caring professionals who treat you with respect and understanding.",
+    description: "Accédez à des recommandations personnalisées pour prévenir les maladies et maintenir votre bien-être.",
     delay: "0.8s"
   },
   {
-    title: "Addictora Recovent Programix",
+    title: "Pharmacies partenaires",
     icon: "/images/icon-service-6.svg",
-    description: "We're here for the entire journey - from detox to residential treatment,",
+    description: "Localisez rapidement les pharmacies proches de vous et gérez vos ordonnances en ligne.",
     delay: "1s"
   },
   {
-    title: "Individual Wellness Planning",
+    title: "Programmes de santé personnalisés",
     icon: "/images/icon-service-7.svg",
-    description: "Our medically supervised detox programs ensure a safe, comfortable.",
+    description: "Bénéficiez d’un accompagnement adapté à vos besoins, grâce à des outils numériques qui facilitent le suivi de votre santé.",
     delay: "1.2s"
   },
   {
-    title: "Behavioral Therapy Sessions",
+    title: "Support et accompagnement continu",
     icon: "/images/icon-service-8.svg",
-    description: "Our team of experts works closely with you to understand your history.",
+    description: "Notre équipe est disponible pour répondre à vos questions et vous guider tout au long de votre parcours santé.",
     delay: "1.4s"
   }
 ];
@@ -67,7 +67,7 @@ const PageServices = () => {
                   <p>{service.description}</p>
                 </div>
                 <div className="service-btn">
-                  <a href="/service-single" className="readmore-btn">Learn More</a>
+                  <a href="/service-single" className="readmore-btn">En savoir plus</a>
                 </div>
               </div>
             </div>

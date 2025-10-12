@@ -63,7 +63,7 @@ const WhyChooseUs = () => {
                   </div>
                 </div>
                 <div className="satisfy-client-content">
-                  <p>Plus de <span className="counter">12</span>K patients satisfaits</p>
+                  <p>Plus de <span className="counter">5</span>K patients satisfaits</p>
                 </div>
               </div>
             </div>

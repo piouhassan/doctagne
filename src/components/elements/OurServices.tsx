@@ -63,7 +63,7 @@ const Services = () => {
                   <img src={service.icon} alt={service.title} />
                 </div>
                 <div className="service-content">
-                  <p className={`${index !== 0 ? "text-black" : "active"}`}>{service.description}</p>
+                  <p className={`${index !== 0 ? "" : "active"}`}>{service.description}</p>
                 </div>
                 <div className="service-btn">
                   <Link href={`/services/${service.slug}`} className="readmore-btn">En savoir plus</Link>

@@ -73,7 +73,7 @@ export default function Header() {
                                     </div>
                                     {/* Header Btn Start */}
                                     <div className="header-btn">
-                                        <Link href="/login" className="btn-default">
+                                        <Link href="https://app.doctagne.com" className="btn-default">
                                             {t('menu.login')}
                                         </Link>
                                     </div>

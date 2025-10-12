@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useRouter } from "next/navigation";
+import {API_BASE} from "@/lib/utils";
 
 interface Article {
   id: number;
@@ -24,7 +25,6 @@ const SingleBlog: React.FC = () => {
   const [nextArticle, setNextArticle] = useState<Article | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const API_BASE = "https://api.doctagne.com/api/v1/public";
 
   useEffect(() => {
     if (!slug) return;
@@ -32,7 +32,7 @@ const SingleBlog: React.FC = () => {
     const fetchArticle = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(`${API_BASE}/articles`);
+        const res = await axios.get(`${API_BASE}public/articles`);
         const articles = res.data.articles || res.data.data || [];
 
         const currentArticle = articles.find((a: Article) => a.slug === slug);
@@ -71,7 +71,7 @@ const SingleBlog: React.FC = () => {
   if (loading) {
     return (
       <div className="text-center py-5" style={{ color: "black" }}>
-        <p>Chargement de l'article...</p>
+        <p>Chargement de l&#39;article...</p>
       </div>
     );
   }
@@ -89,7 +89,7 @@ const SingleBlog: React.FC = () => {
 
   return (
     <>
-      <div className="page-header bg-section parallaxie" style={{backgroundImage:`url('https://api.doctagne.com/uploads/articles/${article.picture}')` }}>
+      <div className="page-header bg-section parallaxie" style={{backgroundImage:`url('https://api.doctagne.com/uploads/articles/${article.picture}')`, padding : "230px" }}>
         <div className="container">
           <div className="row">
             <div className="col-lg-12">

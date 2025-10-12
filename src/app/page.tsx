@@ -14,6 +14,23 @@ import CtaBox from "@/components/elements/CtaBox";
 import OurFaqs from "@/components/elements/OurFaqs";
 import OurTestimonials from "@/components/elements/OurTestimonials";
 import OurBlog from "@/components/elements/OurBlog";
+import { generateSEO } from "@/lib/seo";
+
+export const metadata = generateSEO({
+  title: "Accueil - Plateforme de santé et services médicaux",
+  description: "Doctagne - Votre plateforme complète de santé. Trouvez rapidement des pharmacies de garde, consultez nos services médicaux de qualité et restez informé des dernières actualités santé.",
+  url: "/",
+  keywords: [
+    "pharmacie de garde",
+    "services médicaux",
+    "santé",
+    "urgences médicales",
+    "actualités santé",
+    "plateforme santé",
+    "soins médicaux",
+    "consultations médicales",
+  ],
+});
 
 export default function HomePage() {
   return (

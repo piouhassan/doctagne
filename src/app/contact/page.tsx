@@ -1,10 +1,23 @@
-
-
 import Layout from '@/components/layout/layout';
 import ContactPageHeader from '@/components/elements/ContactPageHeader';
 import ContactInfoSection from '@/components/elements/ContactInfoSection';
 import ContactFormSection from '@/components/elements/ContactFormSection';
 import ContactMapSection from '@/components/elements/ContactMapSection';
+import { generateSEO } from "@/lib/seo";
+
+export const metadata = generateSEO({
+  title: "Contactez-nous",
+  description: "Besoin d'aide ou de renseignements ? Contactez l'équipe Doctagne. Nous sommes à votre écoute pour répondre à toutes vos questions sur nos services médicaux et pharmacies de garde.",
+  url: "/contact",
+  keywords: [
+    "contact doctagne",
+    "nous contacter",
+    "service client",
+    "assistance médicale",
+    "renseignements santé",
+    "support client",
+  ],
+});
 
 export default function ContactPage() {
 	return (

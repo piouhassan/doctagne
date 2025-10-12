@@ -1,0 +1,12 @@
+{
+  "welcome": "Bienvenue sur doc",
+  "menu": {
+    "home": "Accueil",
+    "news": "Actualités",
+    "services": "Services",
+    "pharmacy-garde": "Pharmacie De Garde",
+    "contact": "Contact",
+    "about": "À Propos",
+    "login": "Se connecter"
+  }
+}

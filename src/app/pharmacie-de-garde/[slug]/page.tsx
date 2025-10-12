@@ -1,5 +1,6 @@
 import Layout from '@/components/layout/layout';
 import { notFound } from 'next/navigation';
+import { generateSEO, generatePharmacySchema } from '@/lib/seo';
 
 // Exemple de données statiques, à remplacer par une vraie source de données
 const PHARMACIES = [
@@ -85,16 +86,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  return {
-    title: `${pharmacie.title} | Doctagne`,
+  return generateSEO({
+    title: pharmacie.title,
     description: pharmacie.description,
-    openGraph: {
-      title: pharmacie.title,
-      description: pharmacie.description,
-      images: [pharmacie.image],
-      type: 'website',
-    },
-  };
+    url: `/pharmacie-de-garde/${slug}`,
+    image: pharmacie.image,
+    keywords: [
+      "pharmacie de garde",
+      pharmacie.details.client,
+      pharmacie.quartier,
+      pharmacie.type_garde,
+      "urgence médicale",
+      "pharmacie ouverte",
+    ],
+  });
 }
 
 export default async function PharmacieDeGardeSinglePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -106,9 +111,24 @@ export default async function PharmacieDeGardeSinglePage({ params }: { params: P
     return notFound();
   }
 
+  // Générer le schéma JSON-LD pour la pharmacie
+  const pharmacySchema = generatePharmacySchema({
+    name: pharmacie.details.client,
+    description: pharmacie.description,
+    image: pharmacie.image,
+    address: pharmacie.address,
+    phone: pharmacie.phone,
+    openingHours: pharmacie.details.horaires,
+    url: `/pharmacie-de-garde/${slug}`,
+  });
+
   return (
     <Layout>
-      <div className="page-header bg-section parallaxie">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pharmacySchema) }}
+      />
+      <div className="page-header bg-section parallaxie" style={{backgroundImage:`url('/images/post-4.jpg')` }}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-12">

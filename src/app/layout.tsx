@@ -1,5 +1,7 @@
 import { Poppins } from "next/font/google";
 import "@/styles/globals.css";
+import {Provider} from "@/lib/Provider";
+import { generateSEO, generateOrganizationSchema } from "@/lib/seo";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -8,15 +10,24 @@ const poppins = Poppins({
   display: "swap",
 });
 
-export const metadata = {
-  title: "Mon site",
-  description: "Exemple Next.js avec Poppins",
-};
+export const metadata = generateSEO();
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const organizationSchema = generateOrganizationSchema();
+
   return (
     <html lang="fr" className={poppins.variable}>
-      <body>{children}</body>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+      </head>
+      <body>
+      <Provider>
+          {children}
+      </Provider>
+      </body>
     </html>
   );
 }

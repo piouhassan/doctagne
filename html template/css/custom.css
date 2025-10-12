@@ -2586,7 +2586,6 @@ header.main-header .header-sticky.active{
 
 .page-header{
 	position: relative;
-	background: url('../images/page-header-bg.jpg') no-repeat;
 	background-position: center center;
 	background-size: cover;
 	border-radius: 20px;

@@ -66,9 +66,6 @@ const PageServices = () => {
                 <div className="service-content">
                   <p>{service.description}</p>
                 </div>
-                <div className="service-btn">
-                  <a href="/service-single" className="readmore-btn">En savoir plus</a>
-                </div>
               </div>
             </div>
           ))}

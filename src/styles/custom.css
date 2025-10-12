@@ -63,6 +63,11 @@
 /*** 	   02. General css		  ***/
 /************************************/
 
+.nav-link.active{
+    color: var(--accent-color) !important;
+    font-weight: bold !important;
+}
+
 body{
 	position: relative;
 	font-family: var(--default-font);

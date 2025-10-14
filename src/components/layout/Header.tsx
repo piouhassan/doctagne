@@ -10,6 +10,7 @@ export default function Header() {
   const { t, i18n } = useTranslation();
   const pathname = usePathname();
   const [language, setLanguage] = useState(i18n.language || "fr");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
     { name: "menu.home", path: "/" },
@@ -37,25 +38,26 @@ export default function Header() {
     }
   }, [i18n]);
 
-    return (
-        <div>
-            <header
-                className="main-header"
-                style={{
-                    position: "fixed",
-                    marginBottom: "20px",
-                    background: "white",
-                    left: "0",
-                    right: "0",
-                    zIndex: 1000
-                }}
-            >
-                <div className="header-sticky bg-section">
-                    <nav className="navbar navbar-expand-lg">
-                        <div className="container-fluid">
-                            {/* Logo Start */}
-                            <div className="d-flex align-items-center gap-3">
-                {/* Logo */}
+  const handleLinkClick = () => setIsMenuOpen(false);
+
+  return (
+    <div>
+      <header
+        className="main-header"
+        style={{
+          position: "fixed",
+          marginBottom: "20px",
+          background: "white",
+          left: "0",
+          right: "0",
+          zIndex: 1000,
+        }}
+      >
+        <div className="header-sticky bg-section">
+          <nav className="navbar navbar-expand-lg">
+            <div className="container-fluid d-flex justify-content-between align-items-center">
+              {/* 🟢 Gauche : logo + langues */}
+              <div className="d-flex align-items-center gap-3">
                 <Link className="navbar-brand" href="/">
                   <Image
                     src="/images/logo_docgne.png"
@@ -65,7 +67,6 @@ export default function Header() {
                   />
                 </Link>
 
-                {/* Sélecteur de langue à gauche */}
                 <div className="language-switcher d-flex align-items-center gap-2">
                   <button
                     className={`lang-circle ${
@@ -98,45 +99,61 @@ export default function Header() {
                 </div>
               </div>
 
-                            {/* Logo End */}
+              {/* 🔵 Bouton burger (mobile) */}
+              <button
+                className="navbar-toggler d-lg-none"
+                type="button"
+                aria-label="Menu"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                <span className="navbar-toggler-icon"></span>
+              </button>
 
-                            {/* Main Menu Start */}
-                            <div>
-                                <div className="collapse navbar-collapse main-menu">
-                                    <div className="nav-menu-wrapper">
-                                        <ul className="navbar-nav mr-auto" id="menu">
-                                            {navLinks.map((link) => (
-                                                <li
-                                                    key={link.path}
-                                                    className={`nav-item ${isActiveLink(link.path) ? 'active' : ''}`}
-                                                >
-                                                    <Link
-                                                        className={`nav-link ${isActiveLink(link.path) ? 'active' : ''}`}
-                                                        href={link.path}
-                                                    >
-                                                        {t(link.name)}
-                                                    </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    {/* Header Btn Start */}
-                                    <div className="header-btn">
-                                        <Link href="https://app.doctagne.com" className="btn-default">
-                                            {t('menu.login')}
-                                        </Link>
-                                    </div>
-                                    {/* Header Btn End */}
-                                </div>
-                            </div>
-                            {/* Main Menu End */}
-                            <div className="navbar-toggle"></div>
-                        </div>
-                    </nav>
-                    <div className="responsive-menu"></div>
+              {/* 🔴 Droite : liens + bouton connexion */}
+              <div
+                className={`collapse navbar-collapse main-menu justify-content-end ${
+                  isMenuOpen ? "show" : ""
+                }`}
+              >
+                <div className="d-flex align-items-center justify-content-end w-100">
+                  <ul className="navbar-nav d-flex align-items-center" id="menu">
+                    {navLinks.map((link) => (
+                      <li
+                        key={link.path}
+                        className={`nav-item ${
+                          isActiveLink(link.path) ? "active" : ""
+                        }`}
+                      >
+                        <Link
+                          className={`nav-link ${
+                            isActiveLink(link.path) ? "active" : ""
+                          }`}
+                          href={link.path}
+                          onClick={handleLinkClick}
+                        >
+                          {t(link.name)}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="header-btn ms-3">
+                    <Link
+                      href="https://app.doctagne.com"
+                      className="btn-default"
+                      onClick={handleLinkClick}
+                    >
+                      {t("menu.login")}
+                    </Link>
+                  </div>
                 </div>
-            </header>
-            <div style={{ height: "80px" }}></div>
+              </div>
+            </div>
+          </nav>
         </div>
-    );
+      </header>
+
+      <div style={{ height: "80px" }}></div>
+    </div>
+  );
 }

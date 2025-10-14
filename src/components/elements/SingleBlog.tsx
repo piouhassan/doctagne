@@ -9,11 +9,17 @@ import { useTranslation } from "react-i18next";
 interface Article {
   id: number;
   title: string;
+  title_en?: string;
+  title_fr?: string;
   picture: string;
   content: string;
+  content_en?: string;
+  content_fr?: string;
   slug: string;
   category_id: number;
   name: string;
+  name_en?: string;
+  name_fr?: string;
   created_at: string;
 }
 
@@ -27,13 +33,56 @@ const SingleBlog: React.FC = () => {
   const [nextArticle, setNextArticle] = useState<Article | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Fonction pour obtenir le champ traduit
+  const getTranslatedField = (item: Article | null, field: keyof Article): string => {
+    if (!item) return "";
+    
+    const lang = i18n.language;
+    const translatedKey = `${field}_${lang}` as keyof Article;
+    
+    // Si le champ traduit existe, le retourner
+    if (item[translatedKey]) {
+      return item[translatedKey] as string;
+    }
+    
+    // Sinon retourner le champ par défaut
+    return item[field] as string;
+  };
+
+  // Charger les articles selon la langue courante
   useEffect(() => {
     if (!slug) return;
 
     const fetchArticle = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(`${API_BASE}public/articles`);
+        let res;
+        
+        // Essayer différentes méthodes pour récupérer les articles traduits
+        try {
+          // Méthode 1 : paramètre lang dans l'URL
+          res = await axios.get(`${API_BASE}public/articles`, {
+            params: { lang: i18n.language }
+          });
+        } catch (error) {
+          try {
+            // Méthode 2 : paramètre locale
+            res = await axios.get(`${API_BASE}public/articles`, {
+              params: { locale: i18n.language }
+            });
+          } catch (error2) {
+            try {
+              // Méthode 3 : header Accept-Language
+              res = await axios.get(`${API_BASE}public/articles`, {
+                headers: { 'Accept-Language': i18n.language }
+              });
+            } catch (error3) {
+              // Méthode 4 : sans paramètre (utiliser les champs multilingues)
+              res = await axios.get(`${API_BASE}public/articles`);
+            }
+          }
+        }
+
         const articles = res.data.articles || res.data.data || [];
 
         const currentArticle = articles.find((a: Article) => a.slug === slug);
@@ -52,7 +101,7 @@ const SingleBlog: React.FC = () => {
     };
 
     fetchArticle();
-  }, [slug]);
+  }, [slug, i18n.language]);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -103,12 +152,12 @@ const SingleBlog: React.FC = () => {
             <div className="col-lg-12">
               <div className="page-header-box">
                 <h1 className="text-anime-style-3" data-cursor="-opaque">
-                  {article.title}
+                  {getTranslatedField(article, 'title')}
                 </h1>
                 <div className="post-single-meta wow fadeInUp">
                   <ol className="breadcrumb">
                     <li>
-                      <i className="fa-regular fa-bookmark"></i> {article.name}
+                      <i className="fa-regular fa-bookmark"></i> {getTranslatedField(article, 'name')}
                     </li>
                     <li>
                       <i className="fa-regular fa-clock"></i> {formatDate(article.created_at)}
@@ -125,14 +174,10 @@ const SingleBlog: React.FC = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <div className="post-image">
-                <figure></figure>
-              </div>
-
               <div className="post-content">
                 <div
                   className="post-entry wow fadeInUp"
-                  dangerouslySetInnerHTML={{ __html: article.content }}
+                  dangerouslySetInnerHTML={{ __html: getTranslatedField(article, 'content') }}
                 />
 
                 <div className="post-tag-links">
@@ -147,7 +192,7 @@ const SingleBlog: React.FC = () => {
                           >
                             {t("single-blog.nextArticle")}
                           </a>
-                          <p className="mt-2">{nextArticle.title}</p>
+                          <p className="mt-2">{getTranslatedField(nextArticle, 'title')}</p>
                         </div>
                       )}
                     </div>
@@ -155,22 +200,22 @@ const SingleBlog: React.FC = () => {
                       <div className="post-social-sharing wow fadeInUp" data-wow-delay="0.5s">
                         <ul className="socialMediaList">
                           <li>
-                            <a href="https://www.facebook.com/Doctagne/" aria-label="Facebook">
+                            <a href="https://www.facebook.com/Doctagne/" target="_blank" rel="noopener noreferrer">
                               <i className="fa-brands fa-facebook-f"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="https://www.linkedin.com/doctagne" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/doctagne" target="_blank" rel="noopener noreferrer">
                               <i className="fa-brands fa-linkedin-in"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="https://x.com/doctagne" aria-label="Twitter">
+                            <a href="https://x.com/doctagne" target="_blank" rel="noopener noreferrer">
                               <i className="fa-brands fa-x-twitter"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="https://api.whatsapp.com/send?phone=14709540621" aria-label="WhatsApp">
+                            <a href="https://api.whatsapp.com/send?phone=14709540621" target="_blank" rel="noopener noreferrer">
                               <i className="fa-brands fa-whatsapp"></i>
                             </a>
                           </li>

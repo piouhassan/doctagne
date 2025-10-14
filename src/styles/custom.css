@@ -7544,3 +7544,56 @@ select.form-control {
   border-color: var(--accent-color);
   box-shadow: 0 0 4px rgba(255, 0, 0, 0.3);
 }
+
+@media (max-width: 991px) {
+  /* Cacher complètement la sidebar */
+  .articles-sidebar {
+    display: none !important;
+  }
+
+  /* Faire occuper tout l’espace par les articles */
+  .articles-main {
+    flex: 1 1 100%;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 15px; /* ✅ petit espace de chaque côté */
+  }
+
+  /* Centrer le contenu principal */
+  .articles-layout {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Centrer et limiter la largeur des blocs internes */
+  .articles-main .row {
+    justify-content: center;
+  }
+
+  .articles-main .row.mb-4 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px; /* ✅ léger espace pour les filtres */
+  }
+
+  /* Champs recherche et sélection catégorie */
+  .articles-main .col-lg-8,
+  .articles-main .col-lg-4 {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  /* Centrer les titres et textes */
+  .section-title.text-center,
+  .articles-main p {
+    text-align: center;
+  }
+
+  /* ✅ Pagination centrée et espacée */
+  .page-pagination {
+    padding: 0 15px;
+  }
+}

@@ -7,10 +7,13 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Header() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const pathname = usePathname();
+<<<<<<< Updated upstream
   const [language, setLanguage] = useState(i18n.language || "fr");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+=======
+>>>>>>> Stashed changes
 
   const navLinks = [
     { name: "menu.home", path: "/" },
@@ -23,20 +26,8 @@ export default function Header() {
   const isActiveLink = (path: string) =>
     path === "/" ? pathname === "/" : pathname.startsWith(path);
 
-  const changeLanguage = (lang: string) => {
-    i18n.changeLanguage(lang);
-    setLanguage(lang);
-    document.documentElement.lang = lang;
-    localStorage.setItem("i18nextLng", lang);
-  };
 
-  useEffect(() => {
-    const stored = localStorage.getItem("i18nextLng");
-    if (stored) {
-      setLanguage(stored);
-      i18n.changeLanguage(stored);
-    }
-  }, [i18n]);
+
 
   const handleLinkClick = () => setIsMenuOpen(false);
 
@@ -66,6 +57,7 @@ export default function Header() {
                     width={130}
                   />
                 </Link>
+<<<<<<< Updated upstream
 
                 <div className="language-switcher d-flex align-items-center gap-2">
                   <button
@@ -97,6 +89,8 @@ export default function Header() {
                     />
                   </button>
                 </div>
+=======
+>>>>>>> Stashed changes
               </div>
 
               {/* 🔵 Bouton burger (mobile) */}

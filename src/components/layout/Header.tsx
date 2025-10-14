@@ -4,16 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Header() {
   const { t } = useTranslation();
   const pathname = usePathname();
-<<<<<<< Updated upstream
-  const [language, setLanguage] = useState(i18n.language || "fr");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-=======
->>>>>>> Stashed changes
 
   const navLinks = [
     { name: "menu.home", path: "/" },
@@ -47,7 +43,6 @@ export default function Header() {
         <div className="header-sticky bg-section">
           <nav className="navbar navbar-expand-lg">
             <div className="container-fluid d-flex justify-content-between align-items-center">
-              {/* 🟢 Gauche : logo + langues */}
               <div className="d-flex align-items-center gap-3">
                 <Link className="navbar-brand" href="/">
                   <Image
@@ -57,43 +52,8 @@ export default function Header() {
                     width={130}
                   />
                 </Link>
-<<<<<<< Updated upstream
-
-                <div className="language-switcher d-flex align-items-center gap-2">
-                  <button
-                    className={`lang-circle ${
-                      language === "fr" ? "active" : ""
-                    }`}
-                    onClick={() => changeLanguage("fr")}
-                    aria-label="Français"
-                  >
-                    <img
-                      src="/images/flags/fr.jpg"
-                      alt="Français"
-                      width={22}
-                      height={22}
-                    />
-                  </button>
-                  <button
-                    className={`lang-circle ${
-                      language === "en" ? "active" : ""
-                    }`}
-                    onClick={() => changeLanguage("en")}
-                    aria-label="English"
-                  >
-                    <img
-                      src="/images/flags/en.jpg"
-                      alt="English"
-                      width={22}
-                      height={22}
-                    />
-                  </button>
-                </div>
-=======
->>>>>>> Stashed changes
               </div>
 
-              {/* 🔵 Bouton burger (mobile) */}
               <button
                 className="navbar-toggler d-lg-none"
                 type="button"
@@ -103,14 +63,19 @@ export default function Header() {
                 <span className="navbar-toggler-icon"></span>
               </button>
 
-              {/* 🔴 Droite : liens + bouton connexion */}
+
               <div
                 className={`collapse navbar-collapse main-menu justify-content-end ${
-                  isMenuOpen ? "show" : ""
+                  isMenuOpen ? "show responsive-menu" : ""
                 }`}
               >
-                <div className="d-flex align-items-center justify-content-end w-100">
-                  <ul className="navbar-nav d-flex align-items-center" id="menu">
+                <div className={`d-flex  w-100 ${
+                    isMenuOpen ? "text-left" : "align-items-center justify-content-end"
+                }`}>
+                  <ul className={`d-flex navbar-nav w-100 ${
+                      isMenuOpen ? "text-left menu-open" : "align-items-center justify-content-end"
+                  }`} id="menu"
+                  >
                     {navLinks.map((link) => (
                       <li
                         key={link.path}

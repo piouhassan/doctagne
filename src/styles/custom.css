@@ -7597,3 +7597,13 @@ select.form-control {
     padding: 0 15px;
   }
 }
+
+.menu-open .nav-item:hover {
+    background-color: red;
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.menu-open .nav-item:hover .nav-link {
+    color: white !important;
+}

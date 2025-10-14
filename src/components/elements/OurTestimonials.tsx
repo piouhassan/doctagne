@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -6,7 +7,6 @@ import type { Swiper as SwiperType } from "swiper";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -43,20 +43,21 @@ const OurTestimonials = () => {
                 {t("testimonials.mainTitle")}
               </h2>
               <p style={{ color: "#fff" }}>{t("testimonials.description")}</p>
-              <a
+              <Link
                 href="/actualites"
                 className="btn-default btn-highlighted testimonials-btn"
                 style={{
                   borderRadius: 32,
-                  padding: "20px 40px",
+                  padding: "20px 60px 20px 20px",
                   fontWeight: 600,
                   display: "inline-flex",
+                    fontSize: 12,
                   alignItems: "center",
                   width: "fit-content",
                 }}
               >
                 {t("testimonials.button")}
-              </a>
+              </Link>
             </div>
           </div>
 

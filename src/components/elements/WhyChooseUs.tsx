@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 const WhyChooseUs = () => {
@@ -25,9 +25,9 @@ const WhyChooseUs = () => {
                 className="why-choose-btn wow fadeInUp"
                 data-wow-delay="0.4s"
               >
-                <a href="/about" className="btn-default">
+                <Link href="/services" className="btn-default">
                   {t("why.button")}
-                </a>
+                </Link>
               </div>
 
               <div className="why-choose-item-box">

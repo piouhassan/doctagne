@@ -1,5 +1,6 @@
 "use client";
-
+import Image from "next/image";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 const MainFooter = () => {
@@ -13,7 +14,7 @@ const MainFooter = () => {
           <div className="col-lg-6">
             <div className="about-footer">
               <div className="footer-logo">
-                <img src="/images/doctagne red.png" alt="Footer Logo" />
+                <Image src="/images/doctagne red.png" width={100} height={70} alt="Footer Logo" />
               </div>
               <div className="about-footer-content">
                 <p>{t("footer.description")}</p>
@@ -22,7 +23,7 @@ const MainFooter = () => {
               <div className="footer-contact-details mt-5">
                 <div className="footer-contact-item">
                   <div className="icon-box">
-                    <img src="/images/icon-mail.svg" alt="Mail" />
+                    <Image src="/images/icon-mail.svg" width={30} height={30} alt="Mail" />
                   </div>
                   <div className="footer-contact-item-content">
                     <p className="pt-2">
@@ -32,7 +33,7 @@ const MainFooter = () => {
                 </div>
                 <div className="footer-contact-item">
                   <div className="icon-box">
-                    <img src="/images/icon-phone.svg" alt="Phone" />
+                    <Image src="/images/icon-phone.svg" alt="Phone" height={30} width={30} />
                   </div>
                   <div className="footer-contact-item-content">
                     <p className="pt-2">
@@ -80,11 +81,11 @@ const MainFooter = () => {
               </div>
               <div className="footer-links">
                 <ul>
-                  <li><a href="/app">{t("footer.links.home")}</a></li>
-                  <li><a href="/actualites">{t("footer.links.news")}</a></li>
-                  <li><a href="/services">{t("footer.links.services")}</a></li>
-                  <li><a href="/pharmacie-de-garde">{t("footer.links.pharmacy")}</a></li>
-                  <li><a href="/contact">{t("footer.links.contact")}</a></li>
+                  <li><Link href="/">{t("footer.links.home")}</Link></li>
+                  <li><Link href="/actualites">{t("footer.links.news")}</Link></li>
+                  <li><Link href="/services">{t("footer.links.services")}</Link></li>
+                  <li><Link href="/pharmacie-de-garde">{t("footer.links.pharmacy")}</Link></li>
+                  <li><Link href="/contact">{t("footer.links.contact")}</Link></li>
                 </ul>
               </div>
             </div>

@@ -209,11 +209,8 @@ export default async function PharmacieDeGardeSinglePage({ params }: { params: P
                   <div className="sidebar-cta-image">
                     <figure className="image-anime">
                       <img 
-                        src={pharmacie.sidebarImage} 
-                        alt="Contact urgence" 
-                        onError={(e) => {
-                          e.currentTarget.src = '/images/placeholder-pharmacy.jpg';
-                        }}
+                        src={pharmacie.sidebarImage??'/images/placeholder-pharmacy.jpg'}
+                        alt="Contact urgence"
                       />
                     </figure>
                   </div>
@@ -239,11 +236,8 @@ export default async function PharmacieDeGardeSinglePage({ params }: { params: P
                 <div className="page-single-image">
                   <figure className="image-anime reveal">
                     <img 
-                      src={pharmacie.image} 
+                      src={pharmacie.image??'/images/placeholder-pharmacy.jpg'}
                       alt={pharmacie.title}
-                      onError={(e) => {
-                        e.currentTarget.src = '/images/placeholder-pharmacy.jpg';
-                      }}
                     />
                   </figure>
                 </div>

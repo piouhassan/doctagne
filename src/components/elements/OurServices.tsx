@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
 const Services = () => {
@@ -72,7 +73,7 @@ const Services = () => {
                   </h3>
                 </div>
                 <div className="icon-box">
-                  <img src={service.icon} alt={service.title} />
+                  <Image src={service.icon} alt={service.title} width={20} height={20} style={{color : "white" }} />
                 </div>
                 <div className="service-content">
                   <p className={`${index !== 0 ? "" : "active"}`}>
@@ -91,9 +92,9 @@ const Services = () => {
               <p>
                 <span>{t("services.footer.highlight")}</span>
                 {t("services.footer.text")}{" "}
-                <a href="/book-appointment">
+                <Link href="https://app.doctagne.com">
                   {t("services.footer.link")}
-                </a>
+                </Link>
               </p>
             </div>
           </div>

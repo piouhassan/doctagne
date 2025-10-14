@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
 
 import { useTranslation } from "react-i18next";
 
@@ -23,9 +25,9 @@ const Hero = () => {
                     className="hero-btn wow fadeInUp"
                     data-wow-delay="0.2s"
                   >
-                    <a href="/inscription" className="btn-default btn-dark">
+                    <Link href="https://app.doctagne.com/register" className="btn-default btn-dark">
                       {t("hero.button")}
-                    </a>
+                    </Link>
                   </div>
                   <div
                     className="satisfy-client-box wow fadeInUp"
@@ -34,50 +36,49 @@ const Hero = () => {
                     <div className="satisfy-client-images">
                       <div className="satisfy-client-image">
                         <figure className="image-anime">
-                          <img
+                          <Image
                             src="/images/satisfy-client-img-1.jpg"
                             alt="client"
+                            width={50} height={50}
                           />
                         </figure>
                       </div>
                       <div className="satisfy-client-image">
                         <figure className="image-anime">
-                          <img
+                          <Image
                             src="/images/satisfy-client-img-2.jpg"
                             alt="client"
+                            width={50} height={50}
                           />
                         </figure>
                       </div>
                       <div className="satisfy-client-image">
                         <figure className="image-anime">
-                          <img
+                          <Image
                             src="/images/satisfy-client-img-3.jpg"
                             alt="client"
+                            width={50} height={50}
                           />
                         </figure>
                       </div>
                       <div className="satisfy-client-image">
                         <figure className="image-anime">
-                          <img
+                          <Image
                             src="/images/satisfy-client-img-4.jpg"
                             alt="client"
+                            width={50} height={50}
                           />
                         </figure>
                       </div>
                     </div>
                     <div className="satisfy-client-content">
                       <p>
-                        <span>{t("hero.statNumber")}</span>{" "}{t("hero.statText")}
+                        <small>{t("hero.statNumber")}</small>{" "}{t("hero.statText")}
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-3">
-              {/* <div className="recovery-circle">
-                <a href="/contact"><img src="/images/recovery-circle.svg" alt="" /></a>
-              </div> */}
             </div>
           </div>
         </div>

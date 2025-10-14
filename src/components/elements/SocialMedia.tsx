@@ -6,22 +6,22 @@ const SocialMedia: React.FC = () => (
     <div className="post-social-sharing wow fadeInUp" data-wow-delay="0.5s">
       <ul className="socialMediaList">
         <li>
-          <a href="#" aria-label="Facebook">
+          <a href="https://www.facebook.com/Doctagne/" aria-label="Facebook">
             <i className="fa-brands fa-facebook-f"></i>
           </a>
         </li>
         <li>
-          <a href="#" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/doctagne" aria-label="LinkedIn">
             <i className="fa-brands fa-linkedin-in"></i>
           </a>
         </li>
         <li>
-          <a href="#" aria-label="Twitter">
+          <a href="https://x.com/doctagne" aria-label="Twitter">
             <i className="fa-brands fa-x-twitter"></i>
           </a>
         </li>
         <li>
-          <a href="#" aria-label="WhatsApp">
+          <a href="https://api.whatsapp.com/send?phone=14709540621" aria-label="WhatsApp">
             <i className="fa-brands fa-whatsapp"></i>
           </a>
         </li>

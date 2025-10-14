@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useRouter } from "next/navigation";
-import {API_BASE} from "@/lib/utils";
+import { API_BASE } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 interface Article {
   id: number;
@@ -17,6 +18,7 @@ interface Article {
 }
 
 const SingleBlog: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const params = useParams();
   const router = useRouter();
   const slug = params?.slug as string;
@@ -24,7 +26,6 @@ const SingleBlog: React.FC = () => {
   const [article, setArticle] = useState<Article | null>(null);
   const [nextArticle, setNextArticle] = useState<Article | null>(null);
   const [loading, setLoading] = useState(true);
-
 
   useEffect(() => {
     if (!slug) return;
@@ -55,7 +56,8 @@ const SingleBlog: React.FC = () => {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString("fr-FR", {
+    const locale = i18n.language === "en" ? "en-US" : "fr-FR";
+    return date.toLocaleDateString(locale, {
       day: "numeric",
       month: "long",
       year: "numeric",
@@ -71,7 +73,7 @@ const SingleBlog: React.FC = () => {
   if (loading) {
     return (
       <div className="text-center py-5" style={{ color: "black" }}>
-        <p>Chargement de l&#39;article...</p>
+        <p>{t("single-blog.loading")}</p>
       </div>
     );
   }
@@ -79,9 +81,9 @@ const SingleBlog: React.FC = () => {
   if (!article) {
     return (
       <div className="text-center my-5 py-5">
-        <h2>Article introuvable</h2>
+        <h2>{t("single-blog.notFound")}</h2>
         <a href="/actualites" className="btn btn-primary mt-3">
-          Retour aux articles
+          {t("single-blog.backToArticles")}
         </a>
       </div>
     );
@@ -89,7 +91,13 @@ const SingleBlog: React.FC = () => {
 
   return (
     <>
-      <div className="page-header bg-section parallaxie" style={{backgroundImage:`url('https://api.doctagne.com/uploads/articles/${article.picture}')`, padding : "230px" }}>
+      <div
+        className="page-header bg-section parallaxie"
+        style={{
+          backgroundImage: `url('https://api.doctagne.com/uploads/articles/${article.picture}')`,
+          padding: "230px",
+        }}
+      >
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -118,12 +126,7 @@ const SingleBlog: React.FC = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="post-image">
-                <figure>
-                  {/* <img
-                    src={`https://api.doctagne.com/uploads/articles/${article.picture}`}
-                    alt={article.title}
-                  /> */}
-                </figure>
+                <figure></figure>
               </div>
 
               <div className="post-content">
@@ -142,7 +145,7 @@ const SingleBlog: React.FC = () => {
                             className="btn btn-primary"
                             style={{ cursor: "pointer" }}
                           >
-                            Article suivant 
+                            {t("single-blog.nextArticle")}
                           </a>
                           <p className="mt-2">{nextArticle.title}</p>
                         </div>
@@ -150,24 +153,24 @@ const SingleBlog: React.FC = () => {
                     </div>
                     <div className="col-lg-4">
                       <div className="post-social-sharing wow fadeInUp" data-wow-delay="0.5s">
-                        <ul>
+                        <ul className="socialMediaList">
                           <li>
-                            <a href="#">
+                            <a href="https://www.facebook.com/Doctagne/" aria-label="Facebook">
                               <i className="fa-brands fa-facebook-f"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="#">
+                            <a href="https://www.linkedin.com/doctagne" aria-label="LinkedIn">
                               <i className="fa-brands fa-linkedin-in"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="#">
+                            <a href="https://x.com/doctagne" aria-label="Twitter">
                               <i className="fa-brands fa-x-twitter"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="#">
+                            <a href="https://api.whatsapp.com/send?phone=14709540621" aria-label="WhatsApp">
                               <i className="fa-brands fa-whatsapp"></i>
                             </a>
                           </li>
@@ -179,7 +182,8 @@ const SingleBlog: React.FC = () => {
 
                 <div className="text-center mt-4">
                   <a href="/actualites" className="btn btn-light">
-                    <i className="fa-solid fa-arrow-left me-2"></i> Retour aux articles
+                    <i className="fa-solid fa-arrow-left me-2"></i>{" "}
+                    {t("single-blog.backToArticles")}
                   </a>
                 </div>
               </div>

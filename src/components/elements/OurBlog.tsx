@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 interface Article {
   id: number;
@@ -9,9 +10,11 @@ interface Article {
   picture: string;
   content: string;
   slug: string;
+  created_at: string; // Champ utilisé pour trier par date
 }
 
 const OurBlog = () => {
+  const { t } = useTranslation();
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -19,10 +22,18 @@ const OurBlog = () => {
     axios
       .get("https://api.doctagne.com/api/v1/public/articles")
       .then((res) => {
-        console.log("Résultat API :", res.data);
         const allArticles = res.data.articles || [];
-        const topThree = allArticles.slice(0, 3);
-        setArticles(topThree);
+
+        // ✅ Tri des articles du plus récent au plus ancien
+        const sortedArticles = allArticles.sort(
+          (a: Article, b: Article) =>
+            new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+        );
+
+        // ✅ On garde uniquement les 3 plus récents
+        const latestArticles = sortedArticles.slice(0, 3);
+
+        setArticles(latestArticles);
       })
       .catch((error) => {
         console.error("Erreur lors du chargement des articles:", error);
@@ -30,16 +41,10 @@ const OurBlog = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  // Fonction pour construire l'URL de l'image
+  // Fonction utilitaire pour les images
   const getImageUrl = (picture: string) => {
-    if (!picture) return '';
-    
-    // Si l'image contient déjà le chemin complet
-    if (picture.startsWith('http')) {
-      return picture;
-    }
-    
-    // Sinon, construire l'URL avec le chemin de l'API
+    if (!picture) return "";
+    if (picture.startsWith("http")) return picture;
     return `https://api.doctagne.com/uploads/articles/${picture}`;
   };
 
@@ -49,9 +54,9 @@ const OurBlog = () => {
         <div className="row section-row">
           <div className="col-lg-12">
             <div className="section-title section-title-center">
-              <h3 className="wow fadeInUp">Actualités</h3>
+              <h3 className="wow fadeInUp">{t("blog.sectionTitle")}</h3>
               <h2 className="text-anime-style-3" data-cursor="-opaque">
-                Nos derniers articles
+                {t("blog.mainTitle")}
               </h2>
             </div>
           </div>
@@ -60,11 +65,11 @@ const OurBlog = () => {
         <div className="row">
           {loading ? (
             <div className="col-12 text-center">
-              <p>Chargement des articles...</p>
+              <p>{t("blog.loading")}</p>
             </div>
           ) : articles.length === 0 ? (
             <div className="col-12 text-center">
-              <p>Aucun article disponible</p>
+              <p>{t("blog.noArticles")}</p>
             </div>
           ) : (
             articles.map((article, idx) => (
@@ -74,7 +79,10 @@ const OurBlog = () => {
                   data-wow-delay={`${idx * 0.2}s`}
                 >
                   <div className="post-featured-image">
-                    <a href={`/actualites/${article.slug}`} data-cursor-text="View">
+                    <a
+                      href={`/actualites/${article.slug}`}
+                      data-cursor-text="View"
+                    >
                       <figure className="image-anime">
                         <img
                           src={getImageUrl(article.picture)}
@@ -86,15 +94,25 @@ const OurBlog = () => {
                   <div className="post-item-body">
                     <div className="post-item-content">
                       <h2>
-                        <a href={`/actualites/${article.slug}`}>{article.title}</a>
+                        <a href={`/actualites/${article.slug}`}>
+                          {article.title}
+                        </a>
                       </h2>
+                      {/* 🗓️ Optionnel : afficher la date de publication */}
+                      <p className="text-muted small mt-2">
+                        {new Date(article.created_at).toLocaleDateString("fr-FR", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </p>
                     </div>
                     <div className="post-item-btn">
                       <a
                         href={`/actualites/${article.slug}`}
                         className="readmore-btn"
                       >
-                        Lire plus
+                        {t("blog.readMore")}
                       </a>
                     </div>
                   </div>

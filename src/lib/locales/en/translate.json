@@ -1,3 +1,450 @@
 {
-  "welcome": "welcome to doc"
+  "menu": {
+    "home": "Home",
+    "news": "News",
+    "services": "Services",
+    "pharmacy-garde": "On-call Pharmacy",
+    "contact": "Contact",
+    "login": "Login"
+  },
+  "header": {
+    "language": "Language"
+  },
+
+  "about": {
+    "sectionTitle": "WHAT DOCTAGNÉ DOES",
+    "mainTitle": "Working for a healthier world",
+    "description": "Easily book an appointment with nearby healthcare professionals through digital solutions. Doctagné allows you to consult a medical professional from your phone or computer without moving.",
+    "quote": "Because having good health is already a step towards happiness.",
+    "item1": "Accessible, confidential, and useful healthcare for everyone.",
+    "item2": "Every appointment made can have a social impact.",
+    "final": "Together, let’s work for a healthier world."
+  },
+
+  "articles": {
+    "title": "DOCTAGNÉ ARTICLES",
+    "searchPlaceholder": "Search an article...",
+    "allCategories": "All categories",
+    "loading": "Loading articles...",
+    "noResult": "No article matches your search.",
+    "readMore": "Read more",
+    "found": "{{count}} article found",
+    "found_plural": "{{count}} articles found",
+    "categories": "Categories"
+  },
+
+  "hero": {
+    "title": "Your health within reach wherever you are",
+    "description": "Manage your health and that of your loved ones safely. Book appointments with doctors, pharmacies, and laboratories, consult online, and track your medical results all in one platform.",
+    "button": "Sign up for free",
+    "statNumber": "5.5k+",
+    "statText": "Satisfied patients"
+  },
+
+  "services": {
+    "sectionTitle": "WHAT DOCTAGNÉ OFFERS",
+    "mainTitle": "Accessible and high-quality healthcare services.",
+    "items": [
+      {
+        "title": "Medical Management",
+        "description": "Simplify appointment management in one place. With our solution, medical follow-up becomes smooth, fast, and paperless."
+      },
+      {
+        "title": "Telemedicine",
+        "description": "Remote consultations, safely and securely. Health doesn’t wait — receive medical support wherever you are, anytime."
+      },
+      {
+        "title": "Pharmacy",
+        "description": "Easily find prescribed medicines and connect patients to the nearest pharmacy. Continuity of care from diagnosis to delivery."
+      },
+      {
+        "title": "Laboratory",
+        "description": "Receive and share test results online without traveling. Save time, ensure better follow-up, and facilitate communication between doctor and patient."
+      }
+    ],
+    "footer": {
+      "highlight": "Free ",
+      "text": "Take the first step toward better health –",
+      "link": "book your free evaluation today!"
+    }
+  },
+
+  "why": {
+    "sectionTitle": "Why Choose DOCTAGNÉ",
+    "mainTitle": "Why Doctagné Makes the Difference",
+    "description": "At Doctagné, we combine technological expertise, personalized support, and a network of qualified professionals to make your healthcare journey easier.",
+    "button": "Learn more",
+    "items": [
+      {
+        "title": "Secure Platform",
+        "description": "A safe and confidential digital environment to manage your medical appointments with peace of mind."
+      },
+      {
+        "title": "Continuous Follow-up",
+        "description": "Comprehensive support from booking your appointment to tracking your test results."
+      }
+    ],
+    "statText": "More than",
+    "statNumber": "5",
+    "statEnd": "satisfied patients"
+  },
+
+  "what": {
+    "sectionTitle": "how DOCTAGNÉ Does",
+    "mainTitle": "How We Make Healthcare Access Easier",
+    "description": "We provide a complete platform, a network of qualified professionals, and personalized support for every step of your healthcare journey.",
+    "items": [
+      {
+        "title": "Comprehensive Care Pathway",
+        "description": "From medical consultation to pharmacy and laboratory, we ensure end-to-end follow-up."
+      },
+      {
+        "title": "Smart Management",
+        "description": "We centralize your medical appointments, test results, and prescriptions for optimal health monitoring."
+      },
+      {
+        "title": "Family Support",
+        "description": "Health is a family matter. We make it easy to share information securely with your loved ones."
+      }
+    ],
+    "contact": {
+      "label": "Email Address",
+      "email": "contact@doctagne.com",
+      "button": "Contact us"
+    }
+  },
+
+  "features": {
+  "sectionTitle": "Why Choose Doctagné",
+  "mainTitle": "Discover the advantages of our platform",
+  "button": "Contact us",
+  "items": [
+    {
+      "title": "Simplified Appointments",
+      "description": "Our commitment to personalized service and quality medical follow-up ensures a high satisfaction rate.",
+      "counterText": "Satisfaction rate"
+    },
+    {
+      "title": "Network of Professionals",
+      "description": "Access thousands of partner doctors, pharmacies, and laboratories for all your healthcare needs.",
+      "counterText": "Active professionals"
+    },
+    {
+      "title": "Comprehensive Medical Follow-up",
+      "description": "Our medical management tools and dedicated support allow optimal tracking of your health.",
+      "counterText": "Improved follow-up"
+    }
+  ]
+},
+
+  "how": {
+    "sectionTitle": "How It Works",
+    "mainTitle": "Your healthcare journey in 4 simple steps",
+    "steps": [
+      {
+        "title": "Create your account",
+        "description": "Sign up for free in just a few clicks and access our network of healthcare professionals."
+      },
+      {
+        "title": "Book an appointment",
+        "description": "Search and easily schedule an appointment with a doctor, pharmacy, or laboratory."
+      },
+      {
+        "title": "Online or in person",
+        "description": "Choose between a teleconsultation or an in-office visit based on your convenience."
+      },
+      {
+        "title": "Follow-up and results",
+        "description": "Access your prescriptions, lab results, and medical history from your personal space."
+      }
+    ]
+  },
+
+  "programs": {
+    "mainTitle": "Our Network of Healthcare Professionals",
+    "description": "We work with a large network of qualified healthcare professionals to provide you with accessible and high-quality care.",
+    "items": [
+      {
+        "title": "General Practitioners",
+        "description": "Consult qualified general practitioners for your primary and preventive healthcare needs."
+      },
+      {
+        "title": "Specialists",
+        "description": "Access a network of specialists across all medical fields for expert care."
+      },
+      {
+        "title": "Partner Pharmacies",
+        "description": "Easily find the nearest pharmacies and manage your prescriptions online."
+      },
+      {
+        "title": "Diagnostic Laboratories",
+        "description": "Book your lab tests and receive your results directly on the platform securely."
+      }
+    ]
+  },
+
+  "cta": {
+    "sectionTitle": "Join Us",
+    "mainTitle": "Start your health journey with us today!",
+    "description": "Our team is here to support you throughout your healthcare journey with personalized service, qualified professionals, and follow-up tailored to your needs.",
+    "items": [
+      "Family appointment management",
+      "Responsive customer support"
+    ],
+    "button": "Create a free account"
+  },
+
+  "faqs": {
+    "sectionTitle": "Frequently Asked Questions",
+    "mainTitle": "Common questions about our services",
+    "items": [
+      {
+        "question": "How do I book an appointment on Doctagné?",
+        "answer": "Simply create a free account, search for a healthcare professional (doctor, pharmacy, or laboratory), and choose an available time slot. You’ll receive confirmation by email and SMS."
+      },
+      {
+        "question": "Is the platform secure?",
+        "answer": "Absolutely! Your medical data is encrypted and protected according to GDPR standards. Only you and the healthcare professionals you consult can access your information."
+      },
+      {
+        "question": "Can I consult a doctor online?",
+        "answer": "Yes, Doctagné offers teleconsultation with qualified doctors. You can choose between a remote consultation or an in-office visit based on your needs."
+      },
+      {
+        "question": "How can I access my test results?",
+        "answer": "Once your tests are done in one of our partner labs, the results are automatically available in your personal space securely."
+      }
+    ],
+    "contact": {
+      "title": "Need help? We’re here for you!",
+      "button": "Contact us"
+    }
+  },
+
+  "testimonials": {
+    "sectionTitle": "TESTIMONIALS",
+    "mainTitle": "The experience of our users",
+    "description": "Discover the stories of people who transformed their access to healthcare.",
+    "button": "See all reviews",
+    "items": [
+      {
+        "name": "Mariama Touré",
+        "role": "Mother",
+        "image": "/images/author-1.jpg",
+        "rating": 5,
+        "text": "I never imagined a medical platform could be so simple and effective. As a mother, being able to manage my children's appointments, view their lab results, and even do teleconsultations from home has truly changed my daily life."
+      },
+      {
+        "name": "Amadou Diallo",
+        "role": "Entrepreneur",
+        "image": "/images/author-2.jpg",
+        "rating": 5,
+        "text": "With my busy schedule, Doctagné has helped me stop neglecting my health. Booking appointments is quick, I can consult online, and my test results are available instantly. Exactly what I needed!"
+      },
+      {
+        "name": "Fatou Ndiaye",
+        "role": "Teacher",
+        "image": "/images/author-3.jpg",
+        "rating": 5,
+        "text": "Finding a pharmacy open at 2 AM for my sick child used to be a nightmare. Now with Doctagné, I can instantly find pharmacies open nearby. Real peace of mind for parents!"
+      },
+      {
+        "name": "Ibrahima Sow",
+        "role": "Retired",
+        "image": "/images/author-5.jpg",
+        "rating": 5,
+        "text": "At my age, frequent hospital trips are exhausting. Teleconsultation allows me to follow my treatment regularly without leaving home. The doctors are very professional and attentive. Highly recommended!"
+      }
+    ]
+  },
+
+  "blog": {
+    "sectionTitle": "News",
+    "mainTitle": "Our latest articles",
+    "loading": "Loading articles...",
+    "noArticles": "No articles available at the moment.",
+    "readMore": "Read more"
+  },
+
+  "footer": {
+    "description": "Find a healthcare professional in just a few clicks, near you, online or at home. Getting medical care has never been easier.",
+    "newsletterTitle": "Quickly access a healthcare professional",
+    "placeholder": "Enter your email",
+    "copyright": "Copyright © 2025 Doctagné",
+    "links": {
+      "home": "Home",
+      "news": "News",
+      "services": "Services",
+      "pharmacy": "On-Duty Pharmacy",
+      "contact": "Contact"
+    }
+  },
+
+  "pageHeader": {
+    "title": "News",
+    "path": "Doctagné / News"
+  },
+
+  "page-services": {
+    "item1": {
+      "title": "Easy appointment booking",
+      "description": "Quickly schedule an appointment with a doctor, lab, or partner pharmacy directly from your smartphone or computer."
+    },
+    "item2": {
+      "title": "Secure teleconsultation",
+      "description": "Consult a healthcare professional wherever you are, for convenient and confidential medical follow-ups."
+    },
+    "item3": {
+      "title": "Test results tracking",
+      "description": "Receive and share your medical test results online for faster and more accurate health monitoring."
+    },
+    "item4": {
+      "title": "Family health management",
+      "description": "Securely share medical information with your loved ones and easily monitor your family's health."
+    },
+    "item5": {
+      "title": "Advice and prevention",
+      "description": "Access personalized recommendations to prevent diseases and maintain your well-being."
+    },
+    "item6": {
+      "title": "Partner pharmacies",
+      "description": "Quickly find nearby pharmacies and manage your prescriptions online."
+    },
+    "item7": {
+      "title": "Personalized health programs",
+      "description": "Receive tailored support through digital tools that make it easier to manage your health."
+    },
+    "item8": {
+      "title": "Continuous support and assistance",
+      "description": "Our team is available to answer your questions and guide you throughout your health journey."
+    }
+  },
+
+  "our-approach": {
+    "sectionTitle": "OUR APPROACH",
+    "mainTitle": "Our mission & vision for a better healthcare system",
+    "description": "At Doctagné, we place the patient at the heart of everything we do. We offer human, accessible, and personalized care through a modern and secure platform. Our approach is based on trust, simplicity, and high-quality medical follow-up to make healthcare closer to you.",
+    "mission": {
+      "title": "Our Mission",
+      "text": "To make healthcare accessible, simple, and connected for everyone. Through technology, Doctagné makes it easier to book appointments, access teleconsultations, and follow up on medical care in a secure and human environment."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "text": "To build a world where everyone can easily access quality healthcare wherever they are. Doctagné aims to become the bridge between patients and healthcare professionals by combining technology, proximity, and trust."
+    },
+    "values": {
+      "title": "Our Values",
+      "text": "At Doctagné, we believe in accessible, ethical, and human-centered healthcare. We use technology to promote well-being and bring healthcare professionals and patients closer together."
+    }
+  },
+
+  "our-care": {
+    "sectionTitle": "Our care approach",
+    "mainTitle": "Personalized support for every patient",
+    "description": "Doctagné puts technology at the service of people. Through our platform, patients benefit from personalized, secure, and continuous support — from booking an appointment to receiving results.",
+    "trustedProfessionals": "3K trusted medical professionals",
+    "satisfaction": "satisfaction rate",
+    "professionals": "professionals"
+  },
+
+  "results": {
+    "sectionTitle": "TRUST IN DOCTAGNÉ",
+    "mainTitle": "Visible results",
+    "description": "With Doctagné, access a simple, fast, and secure medical follow-up. Our platform connects patients and healthcare professionals to provide efficient, human, and accessible care for everyone.",
+    "item1": {
+      "title": "Expert medical team",
+      "text": "Our network brings together rigorously selected doctors, pharmacists, and partner laboratories. You benefit from reliable and professional support at every stage of your healthcare journey."
+    },
+    "item2": {
+      "title": "Advanced technology",
+      "text": "Doctagné leverages the power of digital tools for your well-being. With a modern and secure platform, you can book appointments, consult, and track your results wherever you are."
+    },
+    "item3": {
+      "title": "Patient-centered approach",
+      "text": "Because every person is unique, we place your needs and comfort at the heart of our mission."
+    }
+  },
+
+  "services-header": {
+    "title": "Services",
+    "breadcrumb": "Doctagné / Services"
+  },
+
+  "pharmacy": {
+    "title": "Search for an on-duty pharmacy",
+    "placeholders": {
+      "search": "Search by name or address..."
+    },
+    "filters": {
+      "allAreas": "All areas",
+      "allTypes": "All types",
+      "night": "Night shift",
+      "day": "Day shift",
+      "week": "Week duty",
+      "full": "24/7 duty",
+      "sunday": "Sunday duty",
+      "holiday": "Holiday duty"
+    },
+    "buttons": {
+      "nearMe": "Near me",
+      "reset": "Reset",
+      "details": "View details"
+    },
+    "results": {
+      "found": "pharmacy(ies) found",
+      "sortedByDistance": "sorted by distance"
+    },
+    "alerts": {
+      "noGeolocation": "Geolocation is not supported by your browser",
+      "locationError": "Unable to get your location"
+    },
+    "distance": {
+      "unknown": "Unknown distance"
+    },
+    "loading": "Loading...",
+    "empty": "No pharmacy found with these criteria"
+  },
+
+  "pharmacy-header": {
+    "title": "On-duty Pharmacies",
+    "breadcrumb": "Doctagné / On-duty Pharmacies"
+  },
+
+  "contact-header": {
+    "title": "Contact Us",
+    "breadcrumb": "Doctagné / Contact"
+  },
+
+  "contact-info": {
+    "subtitle": "Get in touch",
+    "title": "Contact Information",
+    "description": "Find a healthcare professional near you, online or at home, in just a few clicks. Taking care of your health has never been easier.",
+    "phoneTitle": "Phone Number",
+    "emailTitle": "Email Address",
+    "addressTitle": "Address",
+    "address": "123 Health Avenue, Lomé, Togo",
+    "hoursTitle": "Opening Hours",
+    "days": "Monday to Saturday",
+    "hours": "08:00 AM to 08:00 PM",
+    "follow": "Follow us:"
+  },
+
+  "contact-form": {
+    "title": "Contact Us",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send"
+  },
+
+  "single-blog": {
+    "loading": "Loading article...",
+    "notFound": "Article not found",
+    "backToArticles": "Back to articles",
+    "nextArticle": "Next article"
+  }
+
+
 }

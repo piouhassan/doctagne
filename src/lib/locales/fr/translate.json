@@ -1,12 +1,449 @@
 {
-  "welcome": "Bienvenue sur doc",
   "menu": {
     "home": "Accueil",
     "news": "Actualités",
     "services": "Services",
-    "pharmacy-garde": "Pharmacie De Garde",
+    "pharmacy-garde": "Pharmacie de Garde",
     "contact": "Contact",
-    "about": "À Propos",
-    "login": "Se connecter"
+    "login": "Se Connecter"
+  },
+  "header": {
+    "language": "Langue"
+  },
+  "about": {
+    "sectionTitle": "CE QUE DOCTAGNÉ FAIT",
+    "mainTitle": "Œuvrer pour un monde en meilleure santé",
+    "description": "Obtenez facilement un rendez-vous avec des professionnels de santé proches de chez vous grâce à la digitalisation des secteurs. Doctagné utilise votre smartphone ou votre PC pour vous permettre d'être consulté par un professionnel médical sans vous déplacer.",
+    "quote": "Parce qu’avoir la santé, c’est déjà un pas vers le bonheur.",
+    "item1": "Une santé accessible, confidentielle et utile à tous.",
+    "item2": "Chaque rendez-vous pris peut avoir un impact social.",
+    "final": "Ensemble, œuvrons pour un monde en meilleure santé."
+  },
+  
+  "articles": {
+    "title": "ARTICLES DOCTAGNÉ",
+    "searchPlaceholder": "Rechercher un article...",
+    "allCategories": "Toutes les catégories",
+    "loading": "Chargement des articles...",
+    "noResult": "Aucun article ne correspond à votre recherche.",
+    "readMore": "Lire plus",
+    "found": "{{count}} article trouvé",
+    "found_plural": "{{count}} articles trouvés",
+    "categories": "Catégories"
+  },
+
+  "hero": {
+  "title": "Votre santé à portée de main où que vous soyez",
+  "description": "Gérez votre santé et celle de vos proches en toute sécurité. Prenez rendez-vous avec des médecins, pharmacies et laboratoires, consultez en ligne et suivez vos résultats médicaux sur une seule plateforme.",
+  "button": "S'inscrire gratuitement",
+  "statNumber": "5.5k+",
+  "statText": "Patients satisfaits"
+  },
+
+  "services": {
+    "sectionTitle": "CE QUE DOCTAGNÉ PROPOSE",
+    "mainTitle": "Des services de santé accessibles et de qualité.",
+    "items": [
+      {
+        "title": "Gestion Médicale",
+        "description": "Simplifiez la gestion de vos rendez-vous en un seul endroit. Avec notre solution, le suivi médical devient fluide, rapide et sans paperasse inutile."
+      },
+      {
+        "title": "Télémédecine",
+        "description": "Consultation à distance, en toute sécurité. La santé n’attend pas. Accompagnement médical, où que vous soyez, à tout moment."
+      },
+      {
+        "title": "Pharmacie",
+        "description": "Retrouvez facilement les médicaments prescrits et connectez vos patients à leur pharmacie la plus proche. Une continuité de soins, du diagnostic à la délivrance."
+      },
+      {
+        "title": "Laboratoire",
+        "description": "Recevez et partagez les résultats d’analyses en ligne, sans déplacement. Gagnez du temps, assurez un meilleur suivi, et facilitez la communication entre médecin et patient."
+      }
+    ],
+    "footer": {
+      "highlight": "Gratuit ",
+      "text": "Faites le premier pas vers une meilleure santé –",
+      "link": "planifiez dès aujourd’hui votre évaluation gratuite !"
+    }
+  },
+
+  "why": {
+    "sectionTitle": "Pourquoi choisir DOCTAGNÉ",
+    "mainTitle": "Pourquoi Doctagné fait la différence",
+    "description": "Chez Doctagné, nous combinons expertise technologique, accompagnement personnalisé et réseau de professionnels qualifiés pour faciliter votre parcours de santé.",
+    "button": "En savoir plus",
+    "items": [
+      {
+        "title": "Plateforme Sécurisée",
+        "description": "Un environnement numérique sûr et confidentiel pour gérer vos rendez-vous médicaux en toute sérénité."
+      },
+      {
+        "title": "Suivi Continu",
+        "description": "Un accompagnement complet de la prise de rendez-vous jusqu'au suivi de vos résultats d'analyses."
+      }
+    ],
+    "statText": "Plus de",
+    "statNumber": "5",
+    "statEnd": "patients satisfaits"
+  },
+
+  "what": {
+    "sectionTitle": "Comment nous faisons",
+    "mainTitle": "Comment nous facilitons votre accès aux soins",
+    "description": "Nous offrons une plateforme complète, un réseau de professionnels qualifiés et un accompagnement personnalisé pour chaque étape de votre parcours de santé.",
+    "items": [
+      {
+        "title": "Parcours de Soins Complet",
+        "description": "De la consultation médicale à la pharmacie et au laboratoire, nous assurons un suivi de bout en bout."
+      },
+      {
+        "title": "Gestion Intelligente",
+        "description": "Nous centralisons vos rendez-vous médicaux, résultats d'analyses et ordonnances pour un suivi optimal de votre santé."
+      },
+      {
+        "title": "Accompagnement Familial",
+        "description": "La santé est une affaire de famille. Nous facilitons le partage sécurisé d'informations avec vos proches."
+      }
+    ],
+    "contact": {
+      "label": "Adresse Email",
+      "email": "contact@doctagne.com",
+      "button": "Contactez-nous"
+    }
+  },
+
+  "features": {
+    "sectionTitle": "Pourquoi choisir Doctagné",
+    "mainTitle": "Découvrez les avantages de notre plateforme",
+    "button": "Contactez-nous",
+    "items": [
+      {
+        "title": "Rendez-vous Simplifiés",
+        "description": "Notre engagement pour un service personnalisé et un suivi médical de qualité garantit un taux de satisfaction élevé.",
+        "counterText": "Taux de satisfaction"
+      },
+      {
+        "title": "Réseau de Professionnels",
+        "description": "Accédez à des milliers de médecins, pharmacies et laboratoires partenaires pour tous vos besoins de santé.",
+        "counterText": "Professionnels actifs"
+      },
+      {
+        "title": "Suivi Médical Complet",
+        "description": "Nos outils de gestion médicale et notre support dédié vous permettent un suivi optimal de votre santé.",
+        "counterText": "Amélioration du suivi"
+      }
+    ]
+  },
+
+  "how": {
+    "sectionTitle": "Comment ça marche",
+    "mainTitle": "Votre parcours de santé en 4 étapes simples",
+    "steps": [
+      {
+        "title": "Créez votre compte",
+        "description": "Inscrivez-vous gratuitement en quelques clics et accédez à notre réseau de professionnels de santé."
+      },
+      {
+        "title": "Prenez rendez-vous",
+        "description": "Recherchez et réservez facilement un rendez-vous avec un médecin, une pharmacie ou un laboratoire."
+      },
+      {
+        "title": "En ligne ou en cabinet",
+        "description": "Choisissez entre une téléconsultation ou un rendez-vous en cabinet selon votre convenance."
+      },
+      {
+        "title": "Suivi et résultats",
+        "description": "Accédez à vos ordonnances, résultats d'analyses et historique médical depuis votre espace personnel."
+      }
+    ]
+  },
+
+  "programs": {
+    "mainTitle": "Notre réseau de professionnels de santé",
+    "description": "Nous collaborons avec un vaste réseau de professionnels de santé qualifiés pour vous offrir des soins accessibles et de qualité.",
+    "items": [
+      {
+        "title": "Médecins Généralistes",
+        "description": "Consultez des médecins généralistes qualifiés pour vos soins de santé primaires et préventifs."
+      },
+      {
+        "title": "Spécialistes",
+        "description": "Accédez à un réseau de spécialistes dans tous les domaines médicaux pour des soins experts."
+      },
+      {
+        "title": "Pharmacies Partenaires",
+        "description": "Trouvez facilement les pharmacies les plus proches et gérez vos ordonnances en ligne."
+      },
+      {
+        "title": "Laboratoires d'Analyses",
+        "description": "Réservez vos analyses et recevez vos résultats directement sur la plateforme de manière sécurisée."
+      }
+    ]
+  },
+
+  "cta": {
+    "sectionTitle": "Rejoignez-nous",
+    "mainTitle": "Commencez votre parcours santé avec nous dès aujourd'hui !",
+    "description": "Notre équipe est disponible pour vous accompagner dans votre parcours de santé avec un service personnalisé, des professionnels qualifiés et un suivi adapté à vos besoins.",
+    "items": [
+      "Gestion familiale des rendez-vous",
+      "Support client réactif"
+    ],
+    "button": "Créer un compte gratuitement"
+  },
+
+  "faqs": {
+    "sectionTitle": "Questions fréquentes",
+    "mainTitle": "Questions courantes sur nos services",
+    "items": [
+      {
+        "question": "Comment prendre rendez-vous sur Doctagné ?",
+        "answer": "Il suffit de créer un compte gratuit, de rechercher le professionnel de santé (médecin, pharmacie ou laboratoire) et de choisir un créneau disponible. Vous recevrez une confirmation par email et SMS."
+      },
+      {
+        "question": "La plateforme est-elle sécurisée ?",
+        "answer": "Absolument ! Vos données médicales sont cryptées et protégées selon les normes RGPD. Seuls vous et les professionnels de santé que vous consultez avez accès à vos informations."
+      },
+      {
+        "question": "Puis-je consulter en ligne avec un médecin ?",
+        "answer": "Oui, Doctagné propose la téléconsultation avec des médecins qualifiés. Vous pouvez choisir entre une consultation à distance ou en cabinet selon vos besoins."
+      },
+      {
+        "question": "Comment accéder à mes résultats d'analyses ?",
+        "answer": "Une fois vos analyses effectuées dans un de nos laboratoires partenaires, les résultats sont automatiquement disponibles dans votre espace personnel de manière sécurisée."
+      }
+    ],
+    "contact": {
+      "title": "Besoin d'aide ? Nous sommes là pour vous !",
+      "button": "Contactez-nous"
+    }
+  },
+
+  "testimonials": {
+    "sectionTitle": "TÉMOIGNAGES",
+    "mainTitle": "L'expérience de nos utilisateurs",
+    "description": "Découvrez les témoignages de personnes qui ont transformé leur accès aux soins.",
+    "button": "Tous les avis",
+    "items": [
+      {
+        "name": "Mariama Touré",
+        "role": "Mère de famille",
+        "image": "/images/author-1.jpg",
+        "rating": 5,
+        "text": "Je n'aurais jamais imaginé qu'une plateforme médicale puisse être aussi simple et efficace. En tant que mère de famille, pouvoir gérer les rendez-vous de mes enfants, consulter leurs résultats d'analyses et même faire des téléconsultations depuis chez moi a vraiment changé mon quotidien."
+      },
+      {
+        "name": "Amadou Diallo",
+        "role": "Entrepreneur",
+        "image": "/images/author-2.jpg",
+        "rating": 5,
+        "text": "Avec mon emploi du temps chargé, Doctagné m'a permis de ne plus négliger ma santé. La prise de rendez-vous est rapide, je peux consulter en ligne et mes résultats d'analyses sont accessibles immédiatement. C'est exactement ce dont j'avais besoin !"
+      },
+      {
+        "name": "Fatou Ndiaye",
+        "role": "Professeur",
+        "image": "/images/author-3.jpg",
+        "rating": 5,
+        "text": "Trouver une pharmacie de garde à 2h du matin pour mon fils malade était toujours un calvaire. Maintenant avec Doctagné, je localise instantanément les pharmacies ouvertes près de chez moi. Une vraie tranquillité d'esprit pour les parents !"
+      },
+      {
+        "name": "Ibrahima Sow",
+        "role": "Retraité",
+        "image": "/images/author-5.jpg",
+        "rating": 5,
+        "text": "À mon âge, les déplacements fréquents à l'hôpital sont fatigants. La téléconsultation m'a permis de suivre mon traitement régulièrement sans me déplacer. Les médecins sont très professionnels et attentifs. Je recommande vivement !"
+      }
+    ]
+  },
+
+  "blog": {
+    "sectionTitle": "Actualités",
+    "mainTitle": "Nos derniers articles",
+    "loading": "Chargement des articles...",
+    "noArticles": "Aucun article disponible pour le moment.",
+    "readMore": "Lire plus"
+  },
+
+  "footer": {
+    "description": "Trouvez un professionnel de santé en quelques clics, proche de chez vous, au cabinet en ligne ou à domicile. Se soigner n’a jamais été aussi facile.",
+    "newsletterTitle": "Accédez rapidement à un professionnel de santé",
+    "placeholder": "Entrez votre email",
+    "copyright": "Copyright © 2025 Doctagné",
+    "links": {
+      "home": "Accueil",
+      "news": "Actualités",
+      "services": "Services",
+      "pharmacy": "Pharmacie de Garde",
+      "contact": "Contact"
+    }
+  },
+
+  "pageHeader": {
+    "title": "Actualités",
+    "path": "Doctagné / Actualités"
+  },
+
+  "page-services": {
+    "item1": {
+      "title": "Prise de rendez-vous facile",
+      "description": "Réservez rapidement un rendez-vous avec un médecin, un laboratoire ou une pharmacie partenaire, directement depuis votre smartphone ou PC."
+    },
+    "item2": {
+      "title": "Téléconsultation sécurisée",
+      "description": "Consultez un professionnel de santé où que vous soyez, pour un suivi médical pratique et confidentiel."
+    },
+    "item3": {
+      "title": "Suivi des résultats d’analyses",
+      "description": "Recevez et partagez vos résultats médicaux en ligne, pour un suivi rapide et précis de votre santé."
+    },
+    "item4": {
+      "title": "Gestion de votre santé familiale",
+      "description": "Partagez de manière sécurisée les informations médicales avec vos proches et suivez la santé de votre famille facilement."
+    },
+    "item5": {
+      "title": "Conseils et prévention",
+      "description": "Accédez à des recommandations personnalisées pour prévenir les maladies et maintenir votre bien-être."
+    },
+    "item6": {
+      "title": "Pharmacies partenaires",
+      "description": "Localisez rapidement les pharmacies proches de vous et gérez vos ordonnances en ligne."
+    },
+    "item7": {
+      "title": "Programmes de santé personnalisés",
+      "description": "Bénéficiez d’un accompagnement adapté à vos besoins, grâce à des outils numériques qui facilitent le suivi de votre santé."
+    },
+    "item8": {
+      "title": "Support et accompagnement continu",
+      "description": "Notre équipe est disponible pour répondre à vos questions et vous guider tout au long de votre parcours santé."
+    }
+  },
+
+  "our-approach": {
+    "sectionTitle": "NOTRE APPROCHE",
+    "mainTitle": "Notre mission & vision pour un meilleur système de santé",
+    "description": "Chez Doctagné, nous plaçons le patient au centre de notre démarche. Nous proposons des soins humains, accessibles et adaptés à chacun, grâce à une plateforme moderne et sécurisée. Notre approche repose sur la confiance, la simplicité et la qualité du suivi médical, pour rendre la santé plus proche de vous.",
+    "mission": {
+      "title": "Notre Mission",
+      "text": "Rendre les soins de santé accessibles, simples et connectés pour tous. Grâce à la technologie, Doctagné facilite la prise de rendez-vous, la téléconsultation et le suivi médical, le tout dans un environnement sécurisé et humain."
+    },
+    "vision": {
+      "title": "Notre Vision",
+      "text": "Bâtir un monde où chaque personne peut accéder facilement à des soins de qualité, où qu’elle se trouve. Doctagné aspire à devenir le pont entre les patients et les professionnels de santé, en combinant technologie, proximité et confiance."
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "text": "Chez Doctagné, nous croyons en une santé accessible, éthique et humaine. Nous plaçons la technologie au service du bien-être, pour rapprocher les professionnels de santé et les patients."
+    }
+  },
+
+  "our-care": {
+    "sectionTitle": "Notre accompagnement",
+    "mainTitle": "Un accompagnement personnalisé",
+    "description": "Doctagné met la technologie au service de l’humain. Grâce à notre plateforme, les patients bénéficient d’un accompagnement personnalisé, sécurisé et continu, du rendez-vous à la réception des résultats.",
+    "trustedProfessionals": "3K professionnels médicaux de confiance",
+    "satisfaction": "de satisfaction",
+    "professionals": "professionnels"
+  },
+
+  "results": {
+    "sectionTitle": "CONFIANCE EN DOCTAGNÉ",
+    "mainTitle": "Résultats visibles",
+    "description": "Avec Doctagné, accédez à un suivi médical simple, rapide et sécurisé. Notre plateforme connecte patients et professionnels de santé pour des soins efficaces, humains et accessibles à tous.",
+    "item1": {
+      "title": "Équipe médicale experte",
+      "text": "Notre réseau regroupe des médecins, pharmaciens et laboratoires partenaires rigoureusement sélectionnés. Vous bénéficiez d’un accompagnement fiable et professionnel à chaque étape de votre parcours santé."
+    },
+    "item2": {
+      "title": "Technologie avancée",
+      "text": "Doctagné met la puissance du numérique au service de votre bien-être. Grâce à une plateforme moderne et sécurisée, vous pouvez prendre rendez-vous, consulter et suivre vos résultats où que vous soyez."
+    },
+    "item3": {
+      "title": "Approche centrée sur le patient",
+      "text": "Parce que chaque personne est unique, nous plaçons vos besoins et votre confort au cœur de notre mission."
+    }
+  },
+
+  "services-header": {
+    "title": "Services",
+    "breadcrumb": "Doctagné / Services"
+  },
+
+  "pharmacy": {
+    "title": "Rechercher une pharmacie de garde",
+    "placeholders": {
+      "search": "Rechercher par nom ou adresse..."
+    },
+    "filters": {
+      "allAreas": "Tous les quartiers",
+      "allTypes": "Tous les types",
+      "night": "Garde de nuit",
+      "day": "Garde de jour",
+      "week": "Garde semaine",
+      "full": "Garde 24h/24",
+      "sunday": "Garde dimanche",
+      "holiday": "Garde jour férié"
+    },
+    "buttons": {
+      "nearMe": "Près de moi",
+      "reset": "Réinitialiser",
+      "details": "Voir les détails"
+    },
+    "results": {
+      "found": "pharmacie(s) trouvée(s)",
+      "sortedByDistance": "triées par distance"
+    },
+    "alerts": {
+      "noGeolocation": "La géolocalisation n'est pas supportée par votre navigateur",
+      "locationError": "Impossible d'obtenir votre position"
+    },
+    "distance": {
+      "unknown": "Distance inconnue"
+    },
+    "loading": "Chargement...",
+    "empty": "Aucune pharmacie trouvée avec ces critères"
+  },
+
+  "pharmacy-header": {
+    "title": "Pharmacies de garde",
+    "breadcrumb": "Doctagné / Pharmacies de garde"
+  },
+
+  "contact-header": {
+    "title": "Contactez-nous",
+    "breadcrumb": "Doctagné / Contact"
+  },
+
+  "contact-info": {
+    "subtitle": "Contactez-nous",
+    "title": "Informations de contact",
+    "description": "Trouvez un professionnel de santé en quelques clics, proche de chez vous, au cabinet en ligne ou à domicile. Se soigner n'a jamais été aussi facile.",
+    "phoneTitle": "Numéro Téléphone",
+    "emailTitle": "Adresse Email",
+    "addressTitle": "Adresse",
+    "address": "123 Avenue Santé, Lomé, Togo",
+    "hoursTitle": "Horaires",
+    "days": "Lundi à Samedi",
+    "hours": "08h00 à 20h00",
+    "follow": "Suivez-nous :"
+  },
+
+  "contact-form": {
+    "title": "Contactez-nous",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "message": "Message",
+    "send": "Envoyer"
+  },
+
+  "single-blog": {
+    "loading": "Chargement de l'article...",
+    "notFound": "Article introuvable",
+    "backToArticles": "Retour aux articles",
+    "nextArticle": "Article suivant"
   }
+
+  
 }

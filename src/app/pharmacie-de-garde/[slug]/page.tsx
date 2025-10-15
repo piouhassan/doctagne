@@ -39,7 +39,7 @@ const translations = {
         name: "Nom",
         address: "Adresse",
         city: "Ville",
-        dutyType: "Type de garde",
+        dutyType: "Distance entre vous",
         phone: "Téléphone",
         phone2: "Téléphone 2",
         coordinates: "Coordonnées GPS"
@@ -62,7 +62,7 @@ const translations = {
       service: {
         title: "Détails du service",
         description: "Cette pharmacie est équipée pour vous fournir les médicaments nécessaires et des conseils pharmaceutiques professionnels. Le personnel qualifié est disponible pour vous accompagner dans vos besoins de santé.",
-        dutyType: "Type de garde"
+        dutyType: "Distance entre vous"
       },
       access: {
         title: "Accès et localisation",
@@ -85,6 +85,9 @@ const translations = {
     map: {
       title: "Localisation de"
     }
+  },
+  en: {
+    // Ajoutez les traductions en anglais si nécessaire
   }
 };
 

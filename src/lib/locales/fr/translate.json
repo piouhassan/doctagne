@@ -416,7 +416,7 @@
           "name": "Nom",
           "address": "Adresse",
           "city": "Ville",
-          "dutyType": "Type de garde",
+          "dutyType": "Distance en vous",
           "phone": "Téléphone",
           "phone2": "Téléphone 2",
           "coordinates": "Coordonnées"
@@ -439,7 +439,7 @@
         "service": {
           "title": "Détails du service",
           "description": "Cette pharmacie est équipée pour vous fournir les médicaments nécessaires et des conseils pharmaceutiques professionnels. Le personnel qualifié est disponible pour vous accompagner dans vos besoins de santé.",
-          "dutyType": "Type de garde"
+          "dutyType": "Distance en vous"
         },
         "access": {
           "title": "Accès et localisation",

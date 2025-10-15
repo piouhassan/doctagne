@@ -100,30 +100,23 @@ const PharmacieCaseStudy = () => {
     setUserLocation(null);
   }, []);
 
-  // Chargement des données
+  // Chargement local des données
   useEffect(() => {
-    const loadPharmacies = async () => {
-      try {
-        setLoading(true);
-        const res = await axios.get("https://api.doctagne.com/api/v1/public/pharmacies");
-        const data = res.data.data || res.data || [];
-        setPharmacies(data);
-        setFilteredPharmacies(data);
-
-        const uniqueQuartiers = [...new Set(data.map((p: Pharmacie) => p.ville))];
-        setQuartiers(uniqueQuartiers as string[]);
-      } catch (err) {
-        console.error("Erreur lors du chargement des pharmacies:", err);
-        setPharmacies(pharmaciesData);
-        setFilteredPharmacies(pharmaciesData);
-        setQuartiers([...new Set(pharmaciesData.map((p) => p.ville))]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadPharmacies();
+    setLoading(true);
+    try {
+      setPharmacies(pharmaciesData);
+      setFilteredPharmacies(pharmaciesData);
+      setQuartiers([...new Set(pharmaciesData.map((p) => p.ville))]);
+    } catch (err) {
+      console.error("Erreur lors du chargement des données locales :", err);
+      setPharmacies([]);
+      setFilteredPharmacies([]);
+      setQuartiers([]);
+    } finally {
+      setLoading(false);
+    }
   }, []);
+
 
   // Filtrage
   useEffect(() => {

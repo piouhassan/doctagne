@@ -170,14 +170,9 @@ export default async function PharmacieDeGardeSinglePage({
                 <h1 className="text-anime-style-3" data-cursor="-opaque">{pharmacie.nom}</h1>
                 <nav className="wow fadeInUp">
                   <ol className="breadcrumb">
-                    <li className="breadcrumb-item">
-                      <a href="/">{t.breadcrumb.home}</a>
-                    </li>
-                    <li className="breadcrumb-item">
-                      <a href="/pharmacie-de-garde">{t.breadcrumb.pharmacies}</a>
-                    </li>
+                    
                     <li className="breadcrumb-item active" aria-current="page">
-                      {pharmacie.nom}
+                      Doctagné / Pharmacies de garde / {pharmacie.nom}
                     </li>
                   </ol>
                 </nav>

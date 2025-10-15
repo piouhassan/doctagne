@@ -1906,7 +1906,7 @@ header.main-header .header-sticky.active{
 
 .programs-item-body{
 	display: flex;
-	align-items: end;
+	align-items: flex-end;
 }
 
 .programs-body-content{
@@ -2161,7 +2161,7 @@ header.main-header .header-sticky.active{
 	bottom: 20px;
 	left: 20px;
 	display: flex;
-	align-items: end;
+	align-items: flex-end;
 	background: var(--primary-color);
 	border-radius: 20px;
 	gap: 20px;
@@ -2766,8 +2766,8 @@ header.main-header .header-sticky.active{
 .our-care-images{
     display: flex;
     flex-wrap: wrap;
-    justify-content: end;
-    align-items: start;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
 .care-image-1{
@@ -3166,7 +3166,7 @@ header.main-header .header-sticky.active{
     display: block;
     line-height: 1.5em;
     text-transform: capitalize;
-    color: var(--text-color);
+    color: black;
     background: var(--white-color);
     border-radius: 10px;
     padding: 18px 45px 18px 20px;
@@ -3219,6 +3219,7 @@ header.main-header .header-sticky.active{
     background: var(--primary-color);
     border-radius: 20px;
     padding: 40px;
+	margin-bottom: 15px;
 }
 
 .sidebar-cta-content{
@@ -3330,6 +3331,7 @@ header.main-header .header-sticky.active{
 
 .service-entry p{
 	margin-bottom: 20px;
+	color: black;
 }
 
 .service-entry p:last-child{
@@ -3347,6 +3349,7 @@ header.main-header .header-sticky.active{
 	line-height: 1.5em;
 	padding-left: 30px;
 	margin-bottom: 20px;
+	color: black;
 }
 
 .service-entry ul li:last-child{

@@ -15,6 +15,16 @@ interface TypeGarde {
   label: string;
 }
 
+// Fonction pour générer un slug à partir d'un nom
+function generateSlug(nom: string): string {
+  return nom
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Enlever les accents
+    .replace(/[^a-z0-9]+/g, '-') // Remplacer les caractères spéciaux par des tirets
+    .replace(/^-+|-+$/g, ''); // Enlever les tirets au début et à la fin
+}
+
 const PharmacieCaseStudy = () => {
   const { t } = useTranslation();
 
@@ -253,58 +263,58 @@ const PharmacieCaseStudy = () => {
           </div>
         ) : (
           <div className="row">
-            {filteredPharmacies.map((pharmacie, idx) => (
-              <div key={idx} className="col-lg-4 col-md-6 mb-4">
-                <div className="case-study-item wow fadeInUp" data-wow-delay={`${idx * 0.1}s`}>
-                  <div className="case-study-image">
-                    <figure className="image-anime">
-                      <img
-                        src="/images/case-study-10.jpg"
-                        alt={pharmacie.nom}
-                        onError={(e) => {
-                          e.currentTarget.src = "/images/placeholder-pharmacy.jpg";
-                        }}
-                      />
-                    </figure>
-                    <div className="case-study-btn">
-                      <a href={`/pharmacie-de-garde/${pharmacie.nom}`}>
-                        <img src="/images/arrow-white.svg" alt="Voir" />
-                      </a>
+            {filteredPharmacies.map((pharmacie, idx) => {
+              const slug = generateSlug(pharmacie.nom);
+              return (
+                <div key={idx} className="col-lg-4 col-md-6 mb-4">
+                  <div className="case-study-item wow fadeInUp" data-wow-delay={`${idx * 0.1}s`}>
+                    <div className="case-study-image">
+                      <figure className="image-anime">
+                        <img
+                          src="/images/case-study-10.jpg"
+                          alt={pharmacie.nom}
+                        />
+                      </figure>
+                      <div className="case-study-btn">
+                        <a href={`/pharmacie-de-garde/${slug}`}>
+                          <img src="/images/arrow-white.svg" alt="Voir" />
+                        </a>
+                      </div>
+                      <div className="pharmacy-badge">{pharmacie.distance}</div>
                     </div>
-                    <div className="pharmacy-badge">{pharmacie.distance}</div>
-                  </div>
 
-                  <div className="case-study-content">
-                    <h2>
-                      <a href={`/pharmacie-de-garde/${pharmacie.nom}`}>{pharmacie.nom}</a>
-                    </h2>
-                    <div className="pharmacy-info">
-                      <p>
-                        <i className="fa-solid fa-location-dot"></i> {pharmacie.adresse}
-                      </p>
-                      <p>
-                        <i className="fa-solid fa-phone"></i>{" "}
-                        <a href={`tel:${pharmacie.contact_1}`}>{pharmacie.contact_1}</a>
-                      </p>
-                      <p>
-                        <i className="fa-solid fa-map-pin"></i> {pharmacie.ville}
-                      </p>
-                      {useMyLocation && userLocation && pharmacie.latitude && pharmacie.longitude && (
-                        <p className="pharmacy-distance">
-                          <i className="fa-solid fa-route"></i>{" "}
-                          {calculateDistance(userLocation.lat, userLocation.lng, pharmacie.latitude, pharmacie.longitude).toFixed(2)} km
+                    <div className="case-study-content">
+                      <h2>
+                        <a href={`/pharmacie-de-garde/${slug}`}>{pharmacie.nom}</a>
+                      </h2>
+                      <div className="pharmacy-info">
+                        <p>
+                          <i className="fa-solid fa-location-dot"></i> {pharmacie.adresse}
                         </p>
-                      )}
-                    </div>
-                    <div>
-                      <a href={`/pharmacie-de-garde/${pharmacie.nom}`} className="pharmacy-details-btn">
-                        {t("pharmacy.buttons.details")}
-                      </a>
+                        <p>
+                          <i className="fa-solid fa-phone"></i>{" "}
+                          <a href={`tel:${pharmacie.contact_1}`}>{pharmacie.contact_1}</a>
+                        </p>
+                        <p>
+                          <i className="fa-solid fa-map-pin"></i> {pharmacie.ville}
+                        </p>
+                        {useMyLocation && userLocation && pharmacie.latitude && pharmacie.longitude && (
+                          <p className="pharmacy-distance">
+                            <i className="fa-solid fa-route"></i>{" "}
+                            {calculateDistance(userLocation.lat, userLocation.lng, pharmacie.latitude, pharmacie.longitude).toFixed(2)} km
+                          </p>
+                        )}
+                      </div>
+                      <div>
+                        <a href={`/pharmacie-de-garde/${slug}`} className="pharmacy-details-btn">
+                          {t("pharmacy.buttons.details")}
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>

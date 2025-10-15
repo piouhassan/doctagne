@@ -70,7 +70,7 @@
   },
 
   "why": {
-    "sectionTitle": "Why Choose DOCTAGNÉ",
+    "sectionTitle": "Why trust Doctagné",
     "mainTitle": "Why Doctagné Makes the Difference",
     "description": "At Doctagné, we combine technological expertise, personalized support, and a network of qualified professionals to make your healthcare journey easier.",
     "button": "Learn more",
@@ -402,7 +402,78 @@
       "unknown": "Unknown distance"
     },
     "loading": "Loading...",
-    "empty": "No pharmacy found with these criteria"
+    "empty": "No pharmacy found with these criteria",
+    "detail": {
+      "breadcrumb": {
+        "home": "Doctagné",
+        "pharmacies": "Duty Pharmacies"
+      },
+      "notFound": {
+        "title": "Pharmacy not found"
+      },
+      "sidebar": {
+        "info": {
+          "title": "Pharmacy Information",
+          "name": "Name",
+          "address": "Address",
+          "city": "City",
+          "dutyType": "Duty Type",
+          "phone": "Phone",
+          "phone2": "Phone 2",
+          "coordinates": "Coordinates"
+        },
+        "emergency": {
+          "title": "Medical Emergency?",
+          "description": "Contact the pharmacy directly for any emergency or information.",
+          "callDirect": "Direct Call"
+        },
+        "location": {
+          "title": "GPS Location",
+          "viewOnMaps": "View on Google Maps"
+        }
+      },
+      "content": {
+        "about": {
+          "title": "About {name}",
+          "description": "{name} is located at {address} in the {city} district. This pharmacy provides quality service to meet the medical needs of the population."
+        },
+        "service": {
+          "title": "Service Details",
+          "description": "This pharmacy is equipped to provide you with necessary medications and professional pharmaceutical advice. Qualified staff is available to assist you with your health needs.",
+          "dutyType": "Duty Type"
+        },
+        "access": {
+          "title": "Access and Location",
+          "fullAddress": "Full Address",
+          "mainContact": "Main Contact",
+          "secondaryContact": "Secondary Contact",
+          "getDirections": "Get Directions on Google Maps"
+        },
+        "recommendations": {
+          "title": "Recommendations",
+          "items": [
+            "Present your prescription if you have one",
+            "Report any drug allergies",
+            "Specify if it's an emergency",
+            "Keep the phone number for callback",
+            "Check hours before visiting"
+          ]
+        }
+      },
+      "seo": {
+        "title": "{name} - Duty Pharmacy",
+        "description": "{name} located at {address}, {city}. Contact: {phone}. Duty service available.",
+        "keywords": [
+          "duty pharmacy",
+          "medical emergency",
+          "open pharmacy"
+        ],
+        "schemaDescription": "Duty pharmacy located in {city}"
+      },
+      "map": {
+        "title": "Location of {name}"
+      }
+    }
   },
 
   "pharmacy-header": {

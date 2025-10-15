@@ -401,7 +401,78 @@
       "unknown": "Distance inconnue"
     },
     "loading": "Chargement...",
-    "empty": "Aucune pharmacie trouvée avec ces critères"
+    "empty": "Aucune pharmacie trouvée avec ces critères",
+    "detail": {
+      "breadcrumb": {
+        "home": "Doctagné",
+        "pharmacies": "Pharmacies de garde"
+      },
+      "notFound": {
+        "title": "Pharmacie non trouvée"
+      },
+      "sidebar": {
+        "info": {
+          "title": "Informations de la pharmacie",
+          "name": "Nom",
+          "address": "Adresse",
+          "city": "Ville",
+          "dutyType": "Type de garde",
+          "phone": "Téléphone",
+          "phone2": "Téléphone 2",
+          "coordinates": "Coordonnées"
+        },
+        "emergency": {
+          "title": "Urgence médicale ?",
+          "description": "Contactez directement la pharmacie pour toute urgence ou renseignement.",
+          "callDirect": "Appel direct"
+        },
+        "location": {
+          "title": "Localisation GPS",
+          "viewOnMaps": "Voir sur Google Maps"
+        }
+      },
+      "content": {
+        "about": {
+          "title": "À propos de {name}",
+          "description": "La {name} est située à {address} dans le quartier de {city}. Cette pharmacie assure un service de qualité pour répondre aux besoins médicaux de la population."
+        },
+        "service": {
+          "title": "Détails du service",
+          "description": "Cette pharmacie est équipée pour vous fournir les médicaments nécessaires et des conseils pharmaceutiques professionnels. Le personnel qualifié est disponible pour vous accompagner dans vos besoins de santé.",
+          "dutyType": "Type de garde"
+        },
+        "access": {
+          "title": "Accès et localisation",
+          "fullAddress": "Adresse complète",
+          "mainContact": "Contact principal",
+          "secondaryContact": "Contact secondaire",
+          "getDirections": "Itinéraire sur Google Maps"
+        },
+        "recommendations": {
+          "title": "Recommandations",
+          "items": [
+            "Présentez votre ordonnance si vous en avez une",
+            "Signalez vos allergies médicamenteuses",
+            "Précisez si c'est pour une urgence",
+            "Conservez le numéro de téléphone pour rappel",
+            "Vérifiez les horaires avant de vous déplacer"
+          ]
+        }
+      },
+      "seo": {
+        "title": "{name} - Pharmacie de Garde",
+        "description": "{name} située à {address}, {city}. Contact: {phone}. Service de garde disponible.",
+        "keywords": [
+          "pharmacie de garde",
+          "urgence médicale",
+          "pharmacie ouverte"
+        ],
+        "schemaDescription": "Pharmacie de garde située à {city}"
+      },
+      "map": {
+        "title": "Localisation de {name}"
+      }
+    }
   },
 
   "pharmacy-header": {
@@ -444,6 +515,7 @@
     "backToArticles": "Retour aux articles",
     "nextArticle": "Article suivant"
   }
+  
 
   
 }

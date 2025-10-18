@@ -92,7 +92,7 @@ const Services = () => {
               <p>
                 <span>{t("services.footer.highlight")}</span>
                 {t("services.footer.text")}{" "}
-                <Link href="https://app.doctagne.com">
+                <Link href="https://app.doctagne.com/register">
                   {t("services.footer.link")}
                 </Link>
               </p>

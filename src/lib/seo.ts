@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 export const siteConfig = {
   name: 'Doctagne',
   description: 'Plateforme de prise de rendez-vous en ligne - Trouvez des pharmacies de garde, consultez nos services médicaux et restez informé des actualités santé.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://doctagne.vercel.app',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://doctagne.com',
   ogImage: '/images/og-image.jpg',
   links: {
     twitter: 'https://twitter.com/doctagne',

@@ -85,9 +85,6 @@ const translations = {
     map: {
       title: "Localisation de"
     }
-  },
-  en: {
-    // Ajoutez les traductions en anglais si nécessaire
   }
 };
 
@@ -97,7 +94,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const pharmacie = await getPharmacieData(slug);
   
   if (!pharmacie) {
-    return {
+    return { 
       title: 'Pharmacie non trouvée',
     };
   }

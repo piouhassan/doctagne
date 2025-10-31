@@ -375,7 +375,7 @@
       "search": "Rechercher par nom ou adresse..."
     },
     "filters": {
-      "allAreas": "Tous les quartiers",
+      "allAreas": "Toutes les villes ",
       "allCountries": "Tous les pays",
       "allTypes": "Tous les types",
       "night": "Garde de nuit",
@@ -417,9 +417,10 @@
           "name": "Nom",
           "address": "Adresse",
           "city": "Ville",
-          "dutyType": "Distance en vous",
+          "dutyType": "Type de garde",
           "phone": "Téléphone",
           "phone2": "Téléphone 2",
+          "country": "Pays",
           "coordinates": "Coordonnées"
         },
         "emergency": {
@@ -440,7 +441,7 @@
         "service": {
           "title": "Détails du service",
           "description": "Cette pharmacie est équipée pour vous fournir les médicaments nécessaires et des conseils pharmaceutiques professionnels. Le personnel qualifié est disponible pour vous accompagner dans vos besoins de santé.",
-          "dutyType": "Distance en vous"
+          "country": "Pays"
         },
         "access": {
           "title": "Accès et localisation",

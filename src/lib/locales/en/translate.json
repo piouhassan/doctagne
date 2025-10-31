@@ -371,7 +371,7 @@
   },
 
   "pharmacy": {
-    "title": "Search for an pharmacy",
+    "title": "Find a pharmacy",
     "placeholders": {
       "search": "Search by name or address..."
     },
@@ -379,8 +379,8 @@
       "allAreas": "All areas",
       "allCountries": "All countries",
       "allTypes": "All types",
-      "night": "Night shift",
-      "day": "Day shift",
+      "night": "Night duty",
+      "day": "Day duty",
       "week": "Week duty",
       "full": "24/7 duty",
       "sunday": "Sunday duty",
@@ -392,7 +392,7 @@
       "details": "View details"
     },
     "results": {
-      "found": "pharmacy(ies) found",
+      "found": "pharmacy(s) found",
       "sortedByDistance": "sorted by distance"
     },
     "alerts": {
@@ -400,7 +400,7 @@
       "locationError": "Unable to get your location"
     },
     "distance": {
-      "unknown": "Unknown distance"
+      "unknown": "Distance unknown"
     },
     "loading": "Loading...",
     "empty": "No pharmacy found with these criteria",
@@ -414,19 +414,20 @@
       },
       "sidebar": {
         "info": {
-          "title": "Pharmacy Information",
+          "title": "Pharmacy information",
           "name": "Name",
           "address": "Address",
           "city": "City",
-          "dutyType": "Duty Type",
+          "dutyType": "Duty type",
           "phone": "Phone",
           "phone2": "Phone 2",
+          "country": "Country",
           "coordinates": "Coordinates"
         },
         "emergency": {
-          "title": "Medical Emergency?",
+          "title": "Medical emergency?",
           "description": "Contact the pharmacy directly for any emergency or information.",
-          "callDirect": "Direct Call"
+          "callDirect": "Direct call"
         },
         "location": {
           "title": "GPS Location",
@@ -436,40 +437,40 @@
       "content": {
         "about": {
           "title": "About {name}",
-          "description": "{name} is located at {address} in the {city} district. This pharmacy provides quality service to meet the medical needs of the population."
+          "description": "{name} is located at {address} in the {city} area. This pharmacy provides quality service to meet the medical needs of the population."
         },
         "service": {
-          "title": "Service Details",
-          "description": "This pharmacy is equipped to provide you with necessary medications and professional pharmaceutical advice. Qualified staff is available to assist you with your health needs.",
-          "dutyType": "Duty Type"
+          "title": "Service details",
+          "description": "This pharmacy is equipped to provide you with necessary medications and professional pharmaceutical advice. Qualified staff is available to assist you with your healthcare needs.",
+          "country": "Country"
         },
         "access": {
-          "title": "Access and Location",
-          "fullAddress": "Full Address",
-          "mainContact": "Main Contact",
-          "secondaryContact": "Secondary Contact",
-          "getDirections": "Get Directions on Google Maps"
+          "title": "Access and location",
+          "fullAddress": "Full address",
+          "mainContact": "Main contact",
+          "secondaryContact": "Secondary contact",
+          "getDirections": "Get directions on Google Maps"
         },
         "recommendations": {
           "title": "Recommendations",
           "items": [
             "Present your prescription if you have one",
-            "Report any drug allergies",
+            "Report your drug allergies",
             "Specify if it's an emergency",
-            "Keep the phone number for callback",
-            "Check hours before visiting"
+            "Keep the phone number for reference",
+            "Check opening hours before going"
           ]
         }
       },
       "seo": {
-        "title": "{name} - Duty Pharmacy",
-        "description": "{name} located at {address}, {city}. Contact: {phone}. Duty service available.",
+        "title": "{name} - On-duty Pharmacy",
+        "description": "{name} located at {address}, {city}. Contact: {phone}. On-duty service available.",
         "keywords": [
-          "duty pharmacy",
+          "on-duty pharmacy",
           "medical emergency",
           "open pharmacy"
         ],
-        "schemaDescription": "Duty pharmacy located in {city}"
+        "schemaDescription": "On-duty pharmacy located in {city}"
       },
       "map": {
         "title": "Location of {name}"

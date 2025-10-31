@@ -10,11 +10,6 @@ interface UserLocation {
   lng: number;
 }
 
-interface Country {
-  value: string;
-  label: string;
-}
-
 // Fonction pour générer un slug à partir d'un nom
 function generateSlug(nom: string): string {
   return nom
@@ -23,6 +18,31 @@ function generateSlug(nom: string): string {
     .replace(/[\u0300-\u036f]/g, '') // Enlever les accents
     .replace(/[^a-z0-9]+/g, '-') // Remplacer les caractères spéciaux par des tirets
     .replace(/^-+|-+$/g, ''); // Enlever les tirets au début et à la fin
+}
+
+// Fonction pour détecter le pays à partir des coordonnées GPS
+function detectCountryFromCoordinates(lat: number, lng: number): string {
+  // Bornes géographiques des pays
+  const countryBounds = {
+    "Togo": { latMin: 5, latMax: 12, lngMin: 0, lngMax: 2 },
+    "Bénin": { latMin: 6, latMax: 12, lngMin: 1, lngMax: 3 },
+    "Burkina Faso": { latMin: 9, latMax: 15, lngMin: -6, lngMax: 1 }
+  };
+
+  // Vérifier dans quel pays se trouvent les coordonnées
+  if (lat >= countryBounds.Togo.latMin && lat <= countryBounds.Togo.latMax && 
+      lng >= countryBounds.Togo.lngMin && lng <= countryBounds.Togo.lngMax) {
+    return "Togo";
+  } else if (lat >= countryBounds.Bénin.latMin && lat <= countryBounds.Bénin.latMax && 
+             lng >= countryBounds.Bénin.lngMin && lng <= countryBounds.Bénin.lngMax) {
+    return "Bénin";
+  } else if (lat >= countryBounds["Burkina Faso"].latMin && lat <= countryBounds["Burkina Faso"].latMax && 
+             lng >= countryBounds["Burkina Faso"].lngMin && lng <= countryBounds["Burkina Faso"].lngMax) {
+    return "Burkina Faso";
+  }
+
+  // Retourner une chaîne vide si aucun pays n'est détecté
+  return "";
 }
 
 const PharmacieCaseStudy = () => {
@@ -39,14 +59,7 @@ const PharmacieCaseStudy = () => {
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
   const [quartiers, setQuartiers] = useState<string[]>([]);
   const [countries, setCountries] = useState<string[]>([]);
-
-  // Constantes
-  const countriesList: Country[] = [
-    { value: "", label: t("pharmacy.filters.allCountries") },
-    { value: "Togo", label: "Togo" },
-    { value: "Bénin", label: "Bénin" },
-    { value: "Burkina Faso", label: "Burkina Faso" },
-  ];
+  const [countryDetectionDone, setCountryDetectionDone] = useState(false);
 
   // Calcul de distance entre deux points géographiques
   const calculateDistance = useCallback(
@@ -66,7 +79,42 @@ const PharmacieCaseStudy = () => {
     []
   );
 
-  // Récupération de la position utilisateur
+  // Détection automatique du pays au chargement de la page
+  const detectUserCountry = useCallback(() => {
+    if (!navigator.geolocation) {
+      console.log("Géolocalisation non supportée par le navigateur");
+      setCountryDetectionDone(true);
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const userLat = position.coords.latitude;
+        const userLng = position.coords.longitude;
+        
+        // Détecter le pays à partir des coordonnées
+        const detectedCountry = detectCountryFromCoordinates(userLat, userLng);
+        
+        if (detectedCountry) {
+          setSelectedCountry(detectedCountry);
+          console.log(`Pays détecté: ${detectedCountry}`);
+        }
+        
+        setCountryDetectionDone(true);
+      },
+      (error) => {
+        console.error("Erreur de géolocalisation pour la détection du pays:", error);
+        setCountryDetectionDone(true);
+      },
+      {
+        timeout: 10000, // 10 secondes de timeout
+        maximumAge: 600000, // Accepter une position vieille de 10 minutes
+        enableHighAccuracy: false // Pas besoin de haute précision pour la détection du pays
+      }
+    );
+  }, []);
+
+  // Récupération de la position utilisateur pour le tri par distance
   const getMyLocation = useCallback(() => {
     if (!navigator.geolocation) {
       alert(t("pharmacy.alerts.noGeolocation"));
@@ -98,14 +146,31 @@ const PharmacieCaseStudy = () => {
     setUserLocation(null);
   }, []);
 
+  // Mise à jour des quartiers disponibles en fonction du pays sélectionné
+  const updateQuartiers = useCallback((country: string, pharmaciesList: Pharmacie[]) => {
+    if (country) {
+      // Filtrer les pharmacies par pays et extraire les villes uniques
+      const filteredByCountry = pharmaciesList.filter(pharmacy => pharmacy.pays === country);
+      const uniqueVilles = [...new Set(filteredByCountry.map(p => p.ville))];
+      setQuartiers(uniqueVilles);
+    } else {
+      // Si aucun pays n'est sélectionné, afficher toutes les villes
+      const allVilles = [...new Set(pharmaciesList.map(p => p.ville))];
+      setQuartiers(allVilles);
+    }
+  }, []);
+
   // Chargement local des données
   useEffect(() => {
     setLoading(true);
     try {
       setPharmacies(pharmaciesData);
       setFilteredPharmacies(pharmaciesData);
-      setQuartiers([...new Set(pharmaciesData.map((p) => p.ville))]);
       setCountries([...new Set(pharmaciesData.map((p) => p.pays))]);
+      
+      // Initialiser avec toutes les villes
+      const allVilles = [...new Set(pharmaciesData.map((p) => p.ville))];
+      setQuartiers(allVilles);
     } catch (err) {
       console.error("Erreur lors du chargement des données locales :", err);
       setPharmacies([]);
@@ -116,6 +181,16 @@ const PharmacieCaseStudy = () => {
       setLoading(false);
     }
   }, []);
+
+  // Détection automatique du pays au chargement du composant
+  useEffect(() => {
+    detectUserCountry();
+  }, [detectUserCountry]);
+
+  // Mettre à jour les quartiers disponibles quand le pays change
+  useEffect(() => {
+    updateQuartiers(selectedCountry, pharmacies);
+  }, [selectedCountry, pharmacies, updateQuartiers]);
 
   // Filtrage
   useEffect(() => {
@@ -183,9 +258,9 @@ const PharmacieCaseStudy = () => {
                 </div>
               </div>
 
-              {/* Filtres */}
+              {/* Filtres - 3 colonnes bien ajustées */}
               <div className="row">
-                <div className="col-lg-3 col-md-6 mb-3">
+                <div className="col-lg-4 col-md-6 mb-3">
                   <select
                     className="form-select"
                     value={selectedQuartier}
@@ -200,27 +275,13 @@ const PharmacieCaseStudy = () => {
                   </select>
                 </div>
 
-                <div className="col-lg-3 col-md-6 mb-3">
-                  <select
-                    className="form-select"
-                    value={selectedCountry}
-                    onChange={(e) => setSelectedCountry(e.target.value)}
-                  >
-                    {countriesList.map((country, idx) => (
-                      <option key={idx} value={country.value}>
-                        {country.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="col-lg-3 col-md-6 mb-3">
+                <div className="col-lg-4 col-md-6 mb-3">
                   <button className="btn btn-primary w-100" onClick={getMyLocation}>
                     <i className="fa-solid fa-location-dot"></i> {t("pharmacy.buttons.nearMe")}
                   </button>
                 </div>
 
-                <div className="col-lg-3 col-md-6 mb-3">
+                <div className="col-lg-4 col-md-6 mb-3">
                   <button className="btn btn-secondary w-100" onClick={resetFilters}>
                     <i className="fa-solid fa-rotate-right"></i> {t("pharmacy.buttons.reset")}
                   </button>
@@ -233,6 +294,7 @@ const PharmacieCaseStudy = () => {
                   <p className="pharmacy-results-count" style={{ color: "black" }}>
                     {filteredPharmacies.length} {t("pharmacy.results.found")}
                     {useMyLocation && userLocation && ` (${t("pharmacy.results.sortedByDistance")})`}
+                    {selectedCountry && ` - ${selectedCountry}`}
                   </p>
                 </div>
               </div>
@@ -272,7 +334,7 @@ const PharmacieCaseStudy = () => {
                           <img src="/images/arrow-white.svg" alt="Voir" />
                         </a>
                       </div>
-                      <div className="pharmacy-badge">{pharmacie.pays}</div>
+                      
                     </div>
 
                     <div className="case-study-content">
@@ -298,7 +360,7 @@ const PharmacieCaseStudy = () => {
                         )}
                       </div>
                       <div>
-                        <a href={`/pharmacie-de-garde/${slug}`} className="pharmacy-details-btn">
+                        <a href={`/pharmacies/${slug}`} className="pharmacy-details-btn">
                           {t("pharmacy.buttons.details")}
                         </a>
                       </div>

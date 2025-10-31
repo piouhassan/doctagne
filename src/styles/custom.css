@@ -1758,6 +1758,7 @@ header.main-header .header-sticky.active{
 	justify-content: center;
 	align-items: center;
 	margin-right: 20px;
+	color: var(--white-color);
 }
 
 

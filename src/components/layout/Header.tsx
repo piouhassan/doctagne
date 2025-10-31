@@ -15,7 +15,7 @@ export default function Header() {
     { name: "menu.home", path: "/" },
     { name: "menu.news", path: "/actualites" },
     { name: "menu.services", path: "/services" },
-    { name: "menu.pharmacy-garde", path: "/pharmacie-de-garde" },
+    { name: "menu.pharmacy-garde", path: "/pharmacies" },
     { name: "menu.contact", path: "/contact" },
   ];
 

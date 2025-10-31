@@ -28,10 +28,68 @@ export async function generateStaticParams() {
 
 // Traductions locales (à remplacer par votre système i18n si nécessaire)
 const translations = {
+  en: {
+    breadcrumb: {
+      home: "Home",
+      pharmacies: "Pharmacies"
+    },
+    sidebar: {
+      info: {
+        title: "Pharmacy Information",
+        name: "Name",
+        address: "Address",
+        city: "City",
+        country: "Country",
+        phone: "Phone",
+        phone2: "Phone 2",
+        coordinates: "GPS Coordinates"
+      },
+      emergency: {
+        title: "Medical Emergency?",
+        description: "Contact the pharmacy directly for any emergency or information.",
+        callDirect: "Direct Call"
+      },
+      location: {
+        title: "GPS Location",
+        viewOnMaps: "View on Google Maps"
+      }
+    },
+    content: {
+      about: {
+        title: "About",
+        description: "located at {address} in {city}, {country}. This pharmacy provides quality service to meet the medical needs of the population."
+      },
+      service: {
+        title: "Service Details",
+        description: "This pharmacy is equipped to provide you with necessary medications and professional pharmaceutical advice. Qualified staff is available to assist you with your health needs.",
+        country: "Country"
+      },
+      access: {
+        title: "Access and Location",
+        fullAddress: "Full Address",
+        mainContact: "Main Contact",
+        secondaryContact: "Secondary Contact",
+        getDirections: "Get Directions"
+      },
+      recommendations: {
+        title: "Recommendations",
+        items: [
+          "Present your prescription if you have one",
+          "Report any drug allergies",
+          "Specify if it's an emergency",
+          "Keep the phone number for callback",
+          "Check opening hours before visiting"
+        ]
+      }
+    },
+    map: {
+      title: "Location of"
+    }
+  },
   fr: {
     breadcrumb: {
       home: "Accueil",
-      pharmacies: "Pharmacies de garde"
+      pharmacies: "Pharmacies"
     },
     sidebar: {
       info: {
@@ -39,7 +97,7 @@ const translations = {
         name: "Nom",
         address: "Adresse",
         city: "Ville",
-        dutyType: "Distance entre vous",
+        country: "Pays",
         phone: "Téléphone",
         phone2: "Téléphone 2",
         coordinates: "Coordonnées GPS"
@@ -57,12 +115,12 @@ const translations = {
     content: {
       about: {
         title: "À propos de",
-        description: "située à {address} dans le quartier de {city}. Cette pharmacie assure un service de qualité pour répondre aux besoins médicaux de la population."
+        description: "située à {address} à {city}, {country}. Cette pharmacie assure un service de qualité pour répondre aux besoins médicaux de la population."
       },
       service: {
         title: "Détails du service",
         description: "Cette pharmacie est équipée pour vous fournir les médicaments nécessaires et des conseils pharmaceutiques professionnels. Le personnel qualifié est disponible pour vous accompagner dans vos besoins de santé.",
-        dutyType: "Distance entre vous"
+        country: "Pays"
       },
       access: {
         title: "Accès et localisation",
@@ -100,15 +158,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return generateSEO({
-    title: `${pharmacie.nom} - Pharmacie de Garde`,
-    description: `${pharmacie.nom} située à ${pharmacie.adresse}, ${pharmacie.ville}. Contact: ${pharmacie.contact_1}. Service de garde disponible.`,
+    title: `${pharmacie.nom} - Pharmacie`,
+    description: `${pharmacie.nom} située à ${pharmacie.adresse}, ${pharmacie.ville}, ${pharmacie.pays}. Contact: ${pharmacie.contact_1}. Services pharmaceutiques disponibles.`,
     url: `/pharmacie-de-garde/${slug}`,
     image: '/images/case-study-10.jpg',
     keywords: [
-      "pharmacie de garde",
+      "pharmacie",
       pharmacie.nom,
       pharmacie.ville,
-      "urgence médicale",
+      pharmacie.pays,
+      "médicaments",
       "pharmacie ouverte",
     ],
   });
@@ -146,11 +205,11 @@ export default async function PharmacieDeGardeSinglePage({
   // Générer le schéma JSON-LD pour la pharmacie
   const pharmacySchema = generatePharmacySchema({
     name: pharmacie.nom,
-    description: `Pharmacie de garde située à ${pharmacie.ville}`,
+    description: `Pharmacie située à ${pharmacie.ville}, ${pharmacie.pays}`,
     image: '/images/case-study-10.jpg',
-    address: `${pharmacie.adresse}, ${pharmacie.ville}`,
+    address: `${pharmacie.adresse}, ${pharmacie.ville}, ${pharmacie.pays}`,
     phone: pharmacie.contact_1,
-    openingHours: pharmacie.distance || t.sidebar.info.dutyType,
+    openingHours: pharmacie.pays,
     url: `/pharmacie-de-garde/${slug}`,
   });
 
@@ -170,9 +229,8 @@ export default async function PharmacieDeGardeSinglePage({
                 <h1 className="text-anime-style-3" data-cursor="-opaque">{pharmacie.nom}</h1>
                 <nav className="wow fadeInUp">
                   <ol className="breadcrumb">
-                    
                     <li className="breadcrumb-item active" aria-current="page">
-                      Doctagné / Pharmacies de garde / {pharmacie.nom}
+                      Doctagné / Pharmacies / {pharmacie.nom}
                     </li>
                   </ol>
                 </nav>
@@ -220,13 +278,13 @@ export default async function PharmacieDeGardeSinglePage({
                         </span>
                       </a>
                     </li>
-                    {pharmacie.distance && (
+                    {pharmacie.pays && (
                       <li>
                         <a href="#info">
-                          <i className="fa-solid fa-clock"></i>
+                          <i className="fa-solid fa-globe"></i>
                           <span>
-                            <strong>{t.sidebar.info.dutyType} :</strong><br />
-                            {pharmacie.distance}
+                            <strong>{t.sidebar.info.country} :</strong><br />
+                            {pharmacie.pays}
                           </span>
                         </a>
                       </li>
@@ -337,7 +395,8 @@ export default async function PharmacieDeGardeSinglePage({
                     <p>
                       {pharmacie.nom} {t.content.about.description
                         .replace('{address}', pharmacie.adresse)
-                        .replace('{city}', pharmacie.ville)}
+                        .replace('{city}', pharmacie.ville)
+                        .replace('{country}', pharmacie.pays)}
                     </p>
                   </div>
 
@@ -356,8 +415,8 @@ export default async function PharmacieDeGardeSinglePage({
                         </div>
                         <div className="support-step-content">
                           <p>{t.content.service.description}</p>
-                          {pharmacie.distance && (
-                            <p><strong>{t.content.service.dutyType} :</strong> {pharmacie.distance}</p>
+                          {pharmacie.pays && (
+                            <p><strong>{t.content.service.country} :</strong> {pharmacie.pays}</p>
                           )}
                         </div>
                       </div>
@@ -374,7 +433,7 @@ export default async function PharmacieDeGardeSinglePage({
                         </div>
                         <div className="what-we-item-content">
                           <h3>{t.content.access.fullAddress}</h3>
-                          <p>{pharmacie.adresse}, {pharmacie.ville}</p>
+                          <p>{pharmacie.adresse}, {pharmacie.ville}, {pharmacie.pays}</p>
                         </div>
                       </div>
                       <div className="what-we-item">

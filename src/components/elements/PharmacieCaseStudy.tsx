@@ -10,7 +10,7 @@ interface UserLocation {
   lng: number;
 }
 
-interface TypeGarde {
+interface Country {
   value: string;
   label: string;
 }
@@ -34,20 +34,18 @@ const PharmacieCaseStudy = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedQuartier, setSelectedQuartier] = useState("");
-  const [selectedTypeGarde, setSelectedTypeGarde] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState("");
   const [useMyLocation, setUseMyLocation] = useState(false);
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
   const [quartiers, setQuartiers] = useState<string[]>([]);
+  const [countries, setCountries] = useState<string[]>([]);
 
   // Constantes
-  const typesGarde: TypeGarde[] = [
-    { value: "", label: t("pharmacy.filters.allTypes") },
-    { value: "nuit", label: t("pharmacy.filters.night") },
-    { value: "jour", label: t("pharmacy.filters.day") },
-    { value: "semaine", label: t("pharmacy.filters.week") },
-    { value: "24h", label: t("pharmacy.filters.full") },
-    { value: "dimanche", label: t("pharmacy.filters.sunday") },
-    { value: "ferie", label: t("pharmacy.filters.holiday") },
+  const countriesList: Country[] = [
+    { value: "", label: t("pharmacy.filters.allCountries") },
+    { value: "Togo", label: "Togo" },
+    { value: "Bénin", label: "Bénin" },
+    { value: "Burkina Faso", label: "Burkina Faso" },
   ];
 
   // Calcul de distance entre deux points géographiques
@@ -95,7 +93,7 @@ const PharmacieCaseStudy = () => {
   const resetFilters = useCallback(() => {
     setSearchTerm("");
     setSelectedQuartier("");
-    setSelectedTypeGarde("");
+    setSelectedCountry("");
     setUseMyLocation(false);
     setUserLocation(null);
   }, []);
@@ -107,16 +105,17 @@ const PharmacieCaseStudy = () => {
       setPharmacies(pharmaciesData);
       setFilteredPharmacies(pharmaciesData);
       setQuartiers([...new Set(pharmaciesData.map((p) => p.ville))]);
+      setCountries([...new Set(pharmaciesData.map((p) => p.pays))]);
     } catch (err) {
       console.error("Erreur lors du chargement des données locales :", err);
       setPharmacies([]);
       setFilteredPharmacies([]);
       setQuartiers([]);
+      setCountries([]);
     } finally {
       setLoading(false);
     }
   }, []);
-
 
   // Filtrage
   useEffect(() => {
@@ -134,8 +133,8 @@ const PharmacieCaseStudy = () => {
       filtered = filtered.filter((p) => p.ville === selectedQuartier);
     }
 
-    if (selectedTypeGarde) {
-      filtered = filtered.filter((p) => p.distance.includes(selectedTypeGarde));
+    if (selectedCountry) {
+      filtered = filtered.filter((p) => p.pays === selectedCountry);
     }
 
     if (useMyLocation && userLocation) {
@@ -155,7 +154,7 @@ const PharmacieCaseStudy = () => {
     }
 
     setFilteredPharmacies(filtered);
-  }, [searchTerm, selectedQuartier, selectedTypeGarde, pharmacies, useMyLocation, userLocation, calculateDistance, t]);
+  }, [searchTerm, selectedQuartier, selectedCountry, pharmacies, useMyLocation, userLocation, calculateDistance, t]);
 
   return (
     <div className="page-case-study">
@@ -204,12 +203,12 @@ const PharmacieCaseStudy = () => {
                 <div className="col-lg-3 col-md-6 mb-3">
                   <select
                     className="form-select"
-                    value={selectedTypeGarde}
-                    onChange={(e) => setSelectedTypeGarde(e.target.value)}
+                    value={selectedCountry}
+                    onChange={(e) => setSelectedCountry(e.target.value)}
                   >
-                    {typesGarde.map((type, idx) => (
-                      <option key={idx} value={type.value}>
-                        {type.label}
+                    {countriesList.map((country, idx) => (
+                      <option key={idx} value={country.value}>
+                        {country.label}
                       </option>
                     ))}
                   </select>
@@ -273,7 +272,7 @@ const PharmacieCaseStudy = () => {
                           <img src="/images/arrow-white.svg" alt="Voir" />
                         </a>
                       </div>
-                      <div className="pharmacy-badge">{pharmacie.distance}</div>
+                      <div className="pharmacy-badge">{pharmacie.pays}</div>
                     </div>
 
                     <div className="case-study-content">

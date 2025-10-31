@@ -3,7 +3,7 @@
     "home": "Home",
     "news": "News",
     "services": "Services",
-    "pharmacy-garde": "On-call Pharmacy",
+    "pharmacy-garde": "Pharmacies",
     "contact": "Contact",
     "login": "Login"
   },
@@ -169,7 +169,7 @@
         "description": "Consult qualified general practitioners for your primary and preventive healthcare needs."
       },
       {
-        "title": "Specialists",
+        "title": "Paramedicals",
         "description": "Access a network of specialists across all medical fields for expert care."
       },
       {
@@ -371,12 +371,13 @@
   },
 
   "pharmacy": {
-    "title": "Search for an on-duty pharmacy",
+    "title": "Search for an pharmacy",
     "placeholders": {
       "search": "Search by name or address..."
     },
     "filters": {
       "allAreas": "All areas",
+      "allCountries": "All countries",
       "allTypes": "All types",
       "night": "Night shift",
       "day": "Day shift",
@@ -406,7 +407,7 @@
     "detail": {
       "breadcrumb": {
         "home": "Doctagné",
-        "pharmacies": "Duty Pharmacies"
+        "pharmacies": "Pharmacies"
       },
       "notFound": {
         "title": "Pharmacy not found"
@@ -477,8 +478,8 @@
   },
 
   "pharmacy-header": {
-    "title": "On-duty Pharmacies",
-    "breadcrumb": "Doctagné / On-duty Pharmacies"
+    "title": "Pharmacies",
+    "breadcrumb": "Doctagné / Pharmacies"
   },
 
   "contact-header": {

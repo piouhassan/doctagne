@@ -1760,6 +1760,8 @@ header.main-header .header-sticky.active{
 	margin-right: 20px;
 }
 
+
+
 .what-we-item .icon-box::before{
 	content: '';
 	position: absolute;
@@ -1769,7 +1771,6 @@ header.main-header .header-sticky.active{
 	bottom: 0;
 	width: 100%;
 	height: 100%;
-	background-color: var(--primary-color);
 	border-radius: 50%;
 	transform: scale(0);
 	transition: all 0.3s ease-in-out;
@@ -1789,6 +1790,11 @@ header.main-header .header-sticky.active{
 .what-we-item-content{
 	width: calc(100% - 80px);
 }
+
+.what-we-item-content a{
+	color: #000;
+}
+
 
 .what-we-item-content h3{
 	font-size: 20px;
@@ -3174,6 +3180,11 @@ header.main-header .header-sticky.active{
     transition: all 0.4s ease-in-out;
     z-index: 1;
 }
+
+.page-category-list ul li a i{
+	margin: 0 10px 0 0;
+}
+
 
 .page-category-list ul li:hover a{
     color: var(--white-color);

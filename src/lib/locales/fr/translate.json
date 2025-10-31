@@ -3,7 +3,7 @@
     "home": "Accueil",
     "news": "Actualités",
     "services": "Services",
-    "pharmacy-garde": "Pharmacie de Garde",
+    "pharmacy-garde": "Pharmacies",
     "contact": "Contact",
     "login": "Connexion"
   },
@@ -168,7 +168,7 @@
         "description": "Consultez des médecins généralistes qualifiés pour vos soins de santé primaires et préventifs."
       },
       {
-        "title": "Spécialistes",
+        "title": "Paramédicaux",
         "description": "Accédez à un réseau de spécialistes dans tous les domaines médicaux pour des soins experts."
       },
       {
@@ -370,12 +370,13 @@
   },
 
   "pharmacy": {
-    "title": "Rechercher une pharmacie de garde",
+    "title": "Rechercher une pharmacie",
     "placeholders": {
       "search": "Rechercher par nom ou adresse..."
     },
     "filters": {
       "allAreas": "Tous les quartiers",
+      "allCountries": "Tous les pays",
       "allTypes": "Tous les types",
       "night": "Garde de nuit",
       "day": "Garde de jour",
@@ -405,7 +406,7 @@
     "detail": {
       "breadcrumb": {
         "home": "Doctagné",
-        "pharmacies": "Pharmacies de garde"
+        "pharmacies": "Pharmacies"
       },
       "notFound": {
         "title": "Pharmacie non trouvée"
@@ -476,8 +477,8 @@
   },
 
   "pharmacy-header": {
-    "title": "Pharmacies de garde",
-    "breadcrumb": "Doctagné / Pharmacies de garde"
+    "title": "Pharmacies",
+    "breadcrumb": "Doctagné / Pharmacies"
   },
 
   "contact-header": {

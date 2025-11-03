@@ -150,6 +150,8 @@ export default function PharmacyClientPage({ pharmacie, slug, pharmacySchema }: 
                   </div>
                 </div>
 
+
+
                 {/* Localisation GPS */}
                 {pharmacie.latitude && pharmacie.longitude && (
                   <div className="page-category-list wow fadeInUp" data-wow-delay="0.5s">

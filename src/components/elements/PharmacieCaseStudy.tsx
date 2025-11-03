@@ -330,7 +330,7 @@ const PharmacieCaseStudy = () => {
                         />
                       </figure>
                       <div className="case-study-btn">
-                        <a href={`/pharmacie-de-garde/${slug}`}>
+                        <a href={`/pharmacies/${slug}`}>
                           <img src="/images/arrow-white.svg" alt="Voir" />
                         </a>
                       </div>
@@ -339,7 +339,7 @@ const PharmacieCaseStudy = () => {
 
                     <div className="case-study-content">
                       <h2>
-                        <a href={`/pharmacie-de-garde/${slug}`}>{pharmacie.nom}</a>
+                        <a href={`/pharmacies/${slug}`}>{pharmacie.nom}</a>
                       </h2>
                       <div className="pharmacy-info">
                         <p>

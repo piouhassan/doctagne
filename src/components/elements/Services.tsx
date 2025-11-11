@@ -25,7 +25,7 @@ const Services = () => {
       title: "Intensive Outpatient Program",
       icon: "/images/icon-service-4.svg",
       description: "Our team of experts works closely with you to understand your history.",
-      delay: "0.6s"
+      delay: "0.7s"
     }
   ];
 

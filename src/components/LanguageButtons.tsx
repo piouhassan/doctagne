@@ -8,7 +8,7 @@ export const LanguageButton1: React.FC = () => {
 
   const buttonStyle: CSSProperties = {
     position: 'fixed',
-    top: '20px',
+    top: '100px',
     right: '20px',
     padding: '8px 16px',
     background: '#ffffff',
@@ -48,7 +48,7 @@ export const LanguageButton2: React.FC = () => {
 
   const buttonStyle: CSSProperties = {
     position: 'fixed',
-    top: '20px',
+    top: '100px',
     right: '20px',
     padding: '10px 20px',
     background: '#f9fafb',
@@ -90,7 +90,7 @@ export const LanguageButton3: React.FC = () => {
 
   const buttonStyle: CSSProperties = {
     position: 'fixed',
-    top: '20px',
+    top: '100px',
     right: '20px',
     padding: '10px 18px',
     background: '#ffffff',
@@ -141,7 +141,7 @@ export const LanguageButton4: React.FC = () => {
 
     const buttonStyle: CSSProperties = {
         position: "fixed",
-        bottom: "20px",
+        bottom: "100px",
         right: "-33px",
         padding: "8px 14px",
         background: "#fafafa",
@@ -196,7 +196,7 @@ export const LanguageButton5: React.FC = () => {
 
   const buttonStyle: CSSProperties = {
     position: 'fixed',
-    top: '20px',
+    top: '100px',
     right: '20px',
     padding: '10px 20px',
     background: 'rgba(255, 255, 255, 0.7)',
@@ -238,7 +238,7 @@ export const LanguageButton6: React.FC = () => {
 
   const buttonStyle: CSSProperties = {
     position: 'fixed',
-    top: '20px',
+    top: '100px',
     right: '20px',
     padding: '9px 18px',
     background: 'transparent',
@@ -280,7 +280,7 @@ export const LanguageButton7: React.FC = () => {
 
   const buttonStyle: CSSProperties = {
     position: 'fixed',
-    top: '20px',
+    top: '100px',
     right: '20px',
     width: '44px',
     height: '44px',
@@ -326,7 +326,7 @@ export const LanguageButton8: React.FC = () => {
 
   const containerStyle: CSSProperties = {
     position: 'fixed',
-    top: '20px',
+    top: '100px',
     right: '20px',
     display: 'flex',
     background: '#ffffff',
@@ -374,7 +374,7 @@ export const LanguageButton9: React.FC = () => {
 
   const buttonStyle: CSSProperties = {
     position: 'fixed',
-    top: '20px',
+    top: '100px',
     right: '20px',
     padding: '11px 22px',
     background: '#f8f9fa',
@@ -416,7 +416,7 @@ export const LanguageButton10: React.FC = () => {
 
   const buttonStyle: CSSProperties = {
     position: 'fixed',
-    top: '20px',
+    top: '100px',
     right: '20px',
     padding: '9px 16px',
     background: '#ffffff',

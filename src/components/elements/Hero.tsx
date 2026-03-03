@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
+import { APP_URL } from "@/helpers/env";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -23,7 +24,7 @@ const Hero = () => {
                     className="hero-btn wow fadeInUp"
                     data-wow-delay="0.2s"
                   >
-                    <a href="https://app.doctagne.com/register" className="btn-default btn-dark">
+                    <a href={`${APP_URL}/register`} className="btn-default btn-dark">
                       {t("hero.button")}
                     </a>
                   </div>

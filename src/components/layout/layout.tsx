@@ -1,7 +1,7 @@
 import Header from './Header';
 import MainFooter from './MainFooter';
 import {LanguageButton4} from "@/components/LanguageButtons";
-import Chatbot from "@/components/Chatbot";
+import AIConsultation from "@/components/AIConsultation";
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -14,7 +14,7 @@ export default function Layout({ children }: LayoutProps) {
             <main>{children}</main>
             <MainFooter />
             <LanguageButton4  />
-            <Chatbot />
+            <AIConsultation />
         </div>
     );
 }

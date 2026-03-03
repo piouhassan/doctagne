@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
+import { APP_URL } from "@/helpers/env";
 
 const CtaBox = () => {
   const { t } = useTranslation();
@@ -36,7 +37,7 @@ const CtaBox = () => {
                 className="cta-box-btn wow fadeInUp"
                 data-wow-delay="0.6s"
               >
-                <a href="https://app.doctagne.com/register" className="btn-default btn-dark">
+                <a href={`${APP_URL}/register`} className="btn-default btn-dark">
                   {t("cta.button")}
                 </a>
               </div>

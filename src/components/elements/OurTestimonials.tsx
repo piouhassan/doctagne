@@ -24,13 +24,11 @@ const OurTestimonials = () => {
     text: string;
   }[];
 
-  // MODIFICATION ICI : Remplacez par vos vraies images
+  // Liste des logos partenaires
   const partnerLogos = [
     "/images/partners/logo1.png",
     "/images/partners/logo2.png", 
-
-
-  
+    "/images/partners/logo3.png",
   ];
 
   return (
@@ -197,76 +195,76 @@ const OurTestimonials = () => {
         </div>
       </div>
 
-      {/* Section partenaires - EN DEHORS du bloc rouge */}
-      <div className="container" style={{ marginTop: "80px", marginBottom: "80px" }}>
-        <div className="row">
-          <div className="col-12">
-            {/* Titre Nos Partenaires */}
-            <div className="text-center mb-5 section-title">
-              <h3 className="wow fadeInUp">{t("testimonials.partners")}</h3>
-              <p >
-                {t("testimonials.partners-text")}
-              </p>
-            </div>
-
-            {/* Slider partenaires */}
-            <div 
-              className="company-supports-slider">
-              <Swiper
-                modules={[Autoplay]}
-                spaceBetween={80}
-                slidesPerView={4}
-                autoplay={{
-                  delay: 3000,
-                  disableOnInteraction: false,
-                }}
-                loop={true}
-                breakpoints={{
-                  320: {
-                    slidesPerView: 2,
-                    spaceBetween: 40
-                  },
-                  768: {
-                    slidesPerView: 3,
-                    spaceBetween: 50
-                  },
-                  1024: {
-                    slidesPerView: 2,
-                    spaceBetween: 50
-                  },
-                }}
-                onSwiper={(swiper) => {
-                  partnersSwiperRef.current = swiper;
-                }}
-              >
-                {partnerLogos.map((logo, index) => (
-                  <SwiperSlide key={index}>
-                    <div 
-                      className="company-supports-logo"
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        height: "150px",
-                      }}
-                    >
-                      <img
-                        src={logo}
-                        alt={`Partner logo ${index + 1}`}
-                        style={{
-                          width: "180px",
-                          height: "400px",
-                          objectFit: "contain",
-                          maxHeight: "400px"
-                        }}
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+      {/* Section partenaires - Design Marquee Infini */}
+      <div className="partners-marquee-wrapper" style={{ 
+        padding: "60px 0", 
+        background: "#f8f9fa", // Fond gris clair pour délimiter
+        overflow: "hidden",
+        position: "relative",
+        borderTop: "1px solid #eee", // Bordure subtile en haut
+        borderBottom: "1px solid #eee" // Bordure subtile en bas
+      }}>
+        <div className="container">
+          <div className="text-center mb-40">
+            <h4 style={{ 
+              fontSize: "14px", 
+              fontWeight: "600", 
+              color: "#FB091A", 
+              textTransform: "uppercase", 
+              letterSpacing: "1px",
+              marginBottom: "30px"
+            }}>
+              {t("testimonials.partners")}
+            </h4>
           </div>
         </div>
+
+        <div className="marquee-container" style={{ display: "flex", width: "fit-content" }}>
+          {/* On double la liste pour l'effet infini */}
+          {[...partnerLogos, ...partnerLogos, ...partnerLogos, ...partnerLogos].map((logo, index) => (
+            <div key={index} className="marquee-item" style={{
+              padding: "0 60px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}>
+              <img
+                src={logo}
+                alt={`Partner ${index + 1}`}
+                style={{
+                  height: "80px",
+                  width: "auto",
+                  maxWidth: "none",
+                  transition: "all 0.3s ease",
+                  cursor: "pointer"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.1)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                }}
+              />
+            </div>
+          ))}
+        </div>
+
+        <style jsx>{`
+          .marquee-container {
+            animation: marquee 40s linear infinite;
+          }
+          .marquee-container:hover {
+            animation-play-state: paused;
+          }
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          @media (max-width: 768px) {
+            .marquee-item { padding: 0 30px !important; }
+            .marquee-item img { height: 45px !important; }
+          }
+        `}</style>
       </div>
     </>
   );

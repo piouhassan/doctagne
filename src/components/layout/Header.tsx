@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { APP_URL } from "@/helpers/env";
 
 export default function Header() {
     const { t } = useTranslation();
@@ -105,7 +106,7 @@ export default function Header() {
                                         {/* Bouton Se connecter visible uniquement sur mobile */}
                                         <li className="nav-item mt-2">
                                             <Link
-                                                href="https://app.doctagne.com"
+                                                href={APP_URL}
                                                 className="nav-link"
                                                 onClick={handleLinkClick}
                                             >
@@ -117,7 +118,7 @@ export default function Header() {
                                     {/* Bouton Se connecter visible uniquement sur desktop */}
                                     <div className="header-btn ms-3 d-none d-lg-block">
                                         <Link
-                                            href="https://app.doctagne.com"
+                                            href={APP_URL}
                                             className="btn-default"
                                             onClick={handleLinkClick}
                                         >

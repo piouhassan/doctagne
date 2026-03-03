@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import { APP_URL } from "@/helpers/env";
 
 const Services = () => {
   const { t } = useTranslation();
@@ -92,7 +93,7 @@ const Services = () => {
               <p>
                 <span>{t("services.footer.highlight")}</span>
                 {t("services.footer.text")}{" "}
-                <Link href="https://app.doctagne.com/register">
+                <Link href={`${APP_URL}/register`}>
                   {t("services.footer.link")}
                 </Link>
               </p>

@@ -1,7 +1,12 @@
 import Cookies from 'js-cookie';
 
+const isProduction = process.env.NODE_ENV === 'production';
 
-export   const API_BASE = "https://api.doctagne.com/api/v1/";
+export const SERVER_BASE = isProduction
+    ? "https://api.doctagne.com"
+    : "http://api.localhost";
+
+export const API_BASE = `${SERVER_BASE}/api/v1/`;
 
 export const X_API_KEY : string  = "A/=h6eucodZfZVqgC3G`=>L=M]/$j}8*0o[lZ!ER@Y"
 
